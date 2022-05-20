@@ -99,7 +99,7 @@ proto-gen-openapi:
 
 .PHONY: proto-gen-go
 proto-gen-go:
-	starport generate proto-go
+	bash ./dev/scripts/protocgen.sh
 	go mod tidy
 	make format
 
