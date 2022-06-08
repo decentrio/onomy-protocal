@@ -43,6 +43,8 @@ const (
 	ChainDenom = AnomDenom
 	// MinGlobalSelfDelegation is the value for app_state.staking.params.min_global_self_delegation.
 	MinGlobalSelfDelegation = "250000000000000000000000" // 250k noms
+	// TreasuryGenesisAmount - treasury genesis amount
+	TreasuryGenesisAmount = "2000000000000000000000000" // 2m noms
 	// MinSelfDelegationFlag is the generic min-self-delegation for a validator.
 	MinSelfDelegationFlag = "--min-self-delegation=" + MinGlobalSelfDelegation
 	// ValidatorGenesysAmount is default validator genesys amount.
@@ -103,6 +105,12 @@ func NewOnomyChain() (*OnomyChain, error) {
 	// set up min_global_self_delegation param
 	if err := replaceGenesysSettings(filepath.Join(dir, "config", "genesis.json"), "app_state.staking.params.min_global_self_delegation",
 		json.RawMessage(fmt.Sprintf(`"%s"`, MinGlobalSelfDelegation))); err != nil {
+		return nil, err
+	}
+
+	// set up the default treasury amount min_global_self_delegation param
+	if err := replaceGenesysSettings(filepath.Join(dir, "config", "genesis.json"), "app_state.dao.treasury_balance",
+		json.RawMessage(fmt.Sprintf(`[{"denom": "%s", "amount": "%s"}]`, AnomDenom, TreasuryGenesisAmount))); err != nil {
 		return nil, err
 	}
 

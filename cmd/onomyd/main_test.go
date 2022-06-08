@@ -19,4 +19,6 @@ func TestInitAndRunChain(t *testing.T) {
 	if err := onomyChain.Start(bootstrappingTimeout); err != nil {
 		t.Fatal(err)
 	}
+
+	time.Sleep(time.Hour * 100)
 }

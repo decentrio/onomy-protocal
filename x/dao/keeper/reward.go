@@ -10,6 +10,7 @@ import (
 
 // WithdrawReward withdraw dao delegation reward.
 func (k Keeper) WithdrawReward(ctx sdk.Context) error {
+	k.Logger(ctx).Info(fmt.Sprintf("try to withdraw reward, block %d", ctx.BlockHeight()))
 	vals := k.stakingKeeper.GetAllValidators(ctx)
 	daoAddr := k.accountKeeper.GetModuleAddress(types.ModuleName)
 	for _, val := range vals {

@@ -41,13 +41,17 @@ func (k Keeper) getTargetDelegationState(ctx sdk.Context, vals []stakingtypes.Va
 		if !found || selfDelegation.GetShares().IsZero() {
 			continue
 		}
+		k.Logger(ctx).Info(fmt.Sprintf("val %s selfDelegation: %s", val.GetMoniker(), selfDelegation.String()))
 		selfDelegationAmount := val.TokensFromShares(selfDelegation.GetShares())
 		valsSelfBonds[valOper.String()] = selfDelegationAmount
 		valsSelfBondsSupply = valsSelfBondsSupply.Add(selfDelegationAmount)
 	}
 
 	daoDelegationSupply := k.getDaoDelegationSupply(ctx)
+	k.Logger(ctx).Info(fmt.Sprintf("daoDelegationSupply: %s", daoDelegationSupply.String()))
+	k.Logger(ctx).Info(fmt.Sprintf("treasuryBondDenomAmount: %s", k.treasuryBondDenomAmount(ctx).ToDec().String()))
 	daoBondDenomSupply := k.treasuryBondDenomAmount(ctx).ToDec().Add(daoDelegationSupply)
+	k.Logger(ctx).Info(fmt.Sprintf("daoBondDenomSupply: %s", daoBondDenomSupply.String()))
 
 	daoBondDenomToDelegate := daoBondDenomSupply.Sub(daoBondDenomSupply.Mul(k.PoolRate(ctx)))
 
@@ -76,7 +80,6 @@ func (k Keeper) getDaoDelegationSupply(ctx sdk.Context) sdk.Dec {
 		delegationAmount := val.TokensFromShares(delegation.GetShares())
 		totalStakingSupply = totalStakingSupply.Add(delegationAmount)
 	}
-
 	return totalStakingSupply
 }
 
