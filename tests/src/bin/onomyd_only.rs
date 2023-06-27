@@ -1,4 +1,4 @@
-use common::container_runner;
+use common::{container_runner, dockerfile_onomyd};
 use onomy_test_lib::{
     cosmovisor::{
         cosmovisor_get_addr, cosmovisor_start, get_apr_annual, get_delegations_to,
@@ -9,7 +9,7 @@ use onomy_test_lib::{
         sh,
         stacked_errors::{MapAddError, Result},
     },
-    token18, yaml_str_to_json_value, Args,
+    token18, yaml_str_to_json_value, Args, TIMEOUT,
 };
 
 #[tokio::main]
@@ -29,18 +29,18 @@ async fn main() -> Result<()> {
             &[],
         )
         .await?;
-        container_runner(&args, &[("onomyd", "onomyd")]).await
+        container_runner(&args, &[("onomyd", &dockerfile_onomyd())]).await
     }
 }
 
 async fn onomyd_runner(args: &Args) -> Result<()> {
     let daemon_home = args.daemon_home.as_ref().map_add_err(|| ())?;
-    onomyd_setup(daemon_home, false).await?;
-    let mut cosmovisor_runner = cosmovisor_start("onomyd_runner.log", false, None).await?;
+    onomyd_setup(daemon_home).await?;
+    let mut cosmovisor_runner = cosmovisor_start("onomyd_runner.log", None).await?;
 
     let addr: &String = &cosmovisor_get_addr("validator").await?;
     let valoper_addr = &reprefix_bech32(addr, "onomyvaloper").unwrap();
-    assert!((get_apr_annual(valoper_addr).await? - 13.25).abs() < 0.1);
+    assert!((get_apr_annual(valoper_addr).await? - 13.5).abs() < 0.1);
 
     // make sure DAO is not delegating
     let delegations = yaml_str_to_json_value(&get_delegations_to(valoper_addr).await?)?;
@@ -56,7 +56,7 @@ async fn onomyd_runner(args: &Args) -> Result<()> {
     assert!((get_treasury().await? - 100.0e6).abs() < 100.0);
     assert!((get_treasury_inflation_annual().await? - 0.13).abs() < 0.001);
 
-    cosmovisor_runner.terminate().await?;
+    cosmovisor_runner.terminate(TIMEOUT).await?;
 
     Ok(())
 }

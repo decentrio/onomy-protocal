@@ -5,8 +5,9 @@ ENV PATH=$PATH:/root/go/bin
 
 ENV DAEMON_NAME="onomyd"
 ENV DAEMON_HOME="/root/.onomy"
+# TODO latest onomy_test doesn't support the gravity module for onomyd
 # the previous version
-ENV ONOMY_CURRENT_VERSION=v1.0.3.5
+ENV ONOMY_CURRENT_VERSION=v1.1.1
 # the version that currently is implemented by this repository's state
 ENV ONOMY_UPGRADE_VERSION=v1.1.1
 
