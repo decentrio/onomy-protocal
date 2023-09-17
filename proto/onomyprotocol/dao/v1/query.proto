@@ -21,6 +21,11 @@ service Query {
   rpc Treasury(QueryTreasuryRequest) returns (QueryTreasuryResponse) {
     option (google.api.http).get = "/onomyprotocol/dao/v1/treasury";
   }
+
+	// AllBalances queries the balance of all coins for a single account.
+  rpc AccountBalances(QueryAccountBalancesRequest) returns (QueryAccountBalancesResponse) {
+    option (google.api.http).get = "/onomyprotocol/dao/v1/balances/{denom}";
+  }
 }
 
 // QueryParamsRequest is request type for the Query/Params RPC method.
@@ -42,4 +47,20 @@ message QueryTreasuryResponse {
     (gogoproto.nullable) = false,
     (gogoproto.castrepeated) = "github.com/cosmos/cosmos-sdk/types.Coins"
   ];
+}
+
+// QueryTreasuryRequest is request type for the Query/Treasury RPC method.
+message QueryAccountBalancesRequest {
+	string denom = 1;
+}
+
+// QueryTreasuryResponse is response type for the Query/Treasury RPC method.
+message QueryAccountBalancesResponse {
+  repeated AccountBalance account_balances = 1;
+}
+
+message AccountBalance {
+	string address = 1;
+	string denom = 2;
+	string balance = 3;
 }

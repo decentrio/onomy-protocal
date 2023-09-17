@@ -41,3 +41,25 @@ func (q QueryServer) Treasury(c context.Context, _ *types.QueryTreasuryRequest) 
 		TreasuryBalance: q.keeper.Treasury(ctx),
 	}, nil
 }
+
+func (q QueryServer) AccountBalances(c context.Context, req *types.QueryAccountBalancesRequest) (*types.QueryAccountBalancesResponse, error) {
+	ctx := sdk.UnwrapSDKContext(c)
+
+	accounts := q.keeper.accountKeeper.GetAllAccounts(ctx)
+
+	var accountBalances []*types.AccountBalance
+
+	for _, account := range accounts {
+		address := account.GetAddress()
+		balance := q.keeper.bankKeeper.GetBalance(ctx, address, req.Denom)
+		accountBalances = append(accountBalances, &types.AccountBalance{
+			Address: address.String(),
+			Denom:   req.Denom,
+			Balance: balance.Amount.String(),
+		})
+	}
+
+	return &types.QueryAccountBalancesResponse{
+		AccountBalances: accountBalances,
+	}, nil
+}

@@ -24,6 +24,7 @@ func GetQueryCmd(_ string) *cobra.Command {
 
 	cmd.AddCommand(CmdShowParams())
 	cmd.AddCommand(CmdShowTreasury())
+	cmd.AddCommand(CmdShowAccountBalances())
 
 	return cmd
 }
@@ -65,6 +66,35 @@ func CmdShowTreasury() *cobra.Command {
 			queryClient := types.NewQueryClient(clientCtx)
 
 			res, err := queryClient.Treasury(context.Background(), &types.QueryTreasuryRequest{})
+			if err != nil {
+				return err
+			}
+
+			return clientCtx.PrintProto(res)
+		},
+	}
+
+	flags.AddQueryFlagsToCmd(cmd)
+
+	return cmd
+}
+
+// CmdShowTreasury returns CmdShowTreasury cobra.Command.
+func CmdShowAccountBalances() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:   "account-balances [denom]",
+		Short: "Shows all account balances.",
+		Args:  cobra.ExactArgs(1),
+		RunE: func(cmd *cobra.Command, args []string) (err error) {
+			denom := args[0]
+
+			clientCtx := client.GetClientContextFromCmd(cmd)
+
+			queryClient := types.NewQueryClient(clientCtx)
+
+			res, err := queryClient.AccountBalances(context.Background(), &types.QueryAccountBalancesRequest{
+				Denom: denom,
+			})
 			if err != nil {
 				return err
 			}

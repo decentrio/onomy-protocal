@@ -2,6 +2,7 @@ package types
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	minttypes "github.com/cosmos/cosmos-sdk/x/mint/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
@@ -20,6 +21,7 @@ type ParamSubspace interface {
 // AccountKeeper defines the contract required for account APIs.
 type AccountKeeper interface {
 	GetModuleAddress(string) sdk.AccAddress
+	GetAllAccounts(ctx sdk.Context) []authtypes.AccountI
 }
 
 // BankKeeper defines the contract needed to be fulfilled for banking and supply dependencies.
