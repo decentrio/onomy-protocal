@@ -18,7 +18,7 @@ All the following instructions have been tested on *Ubuntu 18.04.2 LTS* with *do
 Clone `gaia`:
 
 ```
-git clone https://github.com/cosmos/gaia.git
+git clone https://github.com/onomyprotocol/onomy.git
 ```
 
 Checkout the commit, branch, or release tag you want to build:

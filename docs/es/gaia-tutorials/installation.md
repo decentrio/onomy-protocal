@@ -24,17 +24,17 @@ source ~/.bash_profile
 
 ## Instalación de los binarios
 
-Siguiente, instalemos la última versión de Gaia. Asegúrese de hacer `git checkout` a la [versión publicada](https://github.com/cosmos/gaia/releases) correcta.
+Siguiente, instalemos la última versión de Gaia. Asegúrese de hacer `git checkout` a la [versión publicada](https://github.com/onomyprotocol/onomy/releases) correcta.
 
 ```bash
-git clone -b <latest-release-tag> https://github.com/cosmos/gaia
+git clone -b <latest-release-tag> https://github.com/onomyprotocol/onomy
 cd gaia && make install
 ```
 
 Si este comando falla a causa del siguiente mensaje de error, es posible que ya haya establecido `LDFLAGS` antes de ejecutar este paso.
 
 ```
-# github.com/cosmos/gaia/cmd/gaiad
+# github.com/onomyprotocol/onomy/cmd/gaiad
 flag provided but not defined: -L
 usage: link [options] main.o
 ...

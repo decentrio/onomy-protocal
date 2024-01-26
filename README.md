@@ -4,10 +4,10 @@
 
 [![Project Status: Active -- The project has reached a stable, usable state and is being actively
 developed.](https://img.shields.io/badge/repo%20status-Active-green.svg)](https://www.repostatus.org/#active)
-[![License: Apache-2.0](https://img.shields.io/github/license/cosmos/gaia.svg)](https://github.com/cosmos/gaia/blob/main/LICENSE)
-[![Version](https://img.shields.io/github/v/release/cosmos/gaia.svg)](https://github.com/cosmos/gaia/releases/latest)
-[![Go Report Card](https://goreportcard.com/badge/github.com/cosmos/gaia)](https://goreportcard.com/report/github.com/cosmos/gaia)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue?logo=go)](https://pkg.go.dev/github.com/cosmos/gaia)
+[![License: Apache-2.0](https://img.shields.io/github/license/onomyprotocol/onomy.svg)](https://github.com/onomyprotocol/onomy/blob/main/LICENSE)
+[![Version](https://img.shields.io/github/v/release/onomyprotocol/onomy.svg)](https://github.com/onomyprotocol/onomy/releases/latest)
+[![Go Report Card](https://goreportcard.com/badge/github.com/onomyprotocol/onomy)](https://goreportcard.com/report/github.com/onomyprotocol/onomy)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue?logo=go)](https://pkg.go.dev/github.com/onomyprotocol/onomy)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=cosmos_gaia&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=cosmos_gaia)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cosmos_gaia&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cosmos_gaia)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=cosmos_gaia&metric=coverage)](https://sonarcloud.io/summary/new_code?id=cosmos_gaia)
@@ -39,7 +39,7 @@ Alternatively, whether you're new to blockchain technology or interested in gett
 ## 👤 — Node Operators
 
 ___
-If you're interested in running a node on the current Cosmos Hub, check out the docs to [Join the Cosmos Hub Mainnet](https://github.com/cosmos/gaia/blob/main/docs/hub-tutorials/join-mainnet.md).
+If you're interested in running a node on the current Cosmos Hub, check out the docs to [Join the Cosmos Hub Mainnet](https://github.com/onomyprotocol/onomy/blob/main/docs/hub-tutorials/join-mainnet.md).
 
 <br/>
 
@@ -63,7 +63,7 @@ If you still want to participate on the Cosmos Hub, check out becoming a delegat
 
 ___
 
-To participate in or utilize the current Cosmos Hub testnet, take a look at the [cosmos/testnets](https://github.com/cosmos/testnets) repository. This testnet is for the Theta Upgrade expected in Q1 2022. For future upgrades of the Cosmos Hub take a look at the [roadmap](https://github.com/cosmos/gaia/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md).
+To participate in or utilize the current Cosmos Hub testnet, take a look at the [cosmos/testnets](https://github.com/cosmos/testnets) repository. This testnet is for the Theta Upgrade expected in Q1 2022. For future upgrades of the Cosmos Hub take a look at the [roadmap](https://github.com/onomyprotocol/onomy/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md).
 
 <br/>
 
@@ -71,7 +71,7 @@ To participate in or utilize the current Cosmos Hub testnet, take a look at the 
 
 ___
 
-For an overview of upcoming changes to the Cosmos Hub take a look at the [Roadmap](https://github.com/cosmos/gaia/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md).
+For an overview of upcoming changes to the Cosmos Hub take a look at the [Roadmap](https://github.com/onomyprotocol/onomy/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md).
 
 <br/>
 
@@ -115,8 +115,8 @@ For updates on the Cosmos Hub team's activities follow us on the [Cosmos Hub Twi
 
 ___
 
-[![Stargazers repo roster for @cosmos/gaia](https://reporoster.com/stars/cosmos/gaia)](https://github.com/cosmos/gaia/stargazers)
-[![Forkers repo roster for @cosmos/gaia](https://reporoster.com/forks/cosmos/gaia)](https://github.com/cosmos/gaia/network/members)
+[![Stargazers repo roster for @onomyprotocol/onomy](https://reporoster.com/stars/onomyprotocol/onomy)](https://github.com/onomyprotocol/onomy/stargazers)
+[![Forkers repo roster for @onomyprotocol/onomy](https://reporoster.com/forks/onomyprotocol/onomy)](https://github.com/onomyprotocol/onomy/network/members)
 
 <br/>
 
@@ -124,4 +124,4 @@ ___
 
 <br/>
 
-<p align="center"><a href="https://github.com/cosmos/gaia#"><img src="http://randojs.com/images/backToTopButtonTransparentBackground.png" alt="Back to top" height="29"/></a></p>
+<p align="center"><a href="https://github.com/onomyprotocol/onomy#"><img src="http://randojs.com/images/backToTopButtonTransparentBackground.png" alt="Back to top" height="29"/></a></p>

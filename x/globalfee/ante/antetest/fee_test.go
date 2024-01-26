@@ -13,8 +13,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	gaiafeeante "github.com/cosmos/gaia/v15/x/globalfee/ante"
-	globfeetypes "github.com/cosmos/gaia/v15/x/globalfee/types"
+	gaiafeeante "github.com/onomyprotocol/onomy/v15/x/globalfee/ante"
+	globfeetypes "github.com/onomyprotocol/onomy/v15/x/globalfee/types"
 )
 
 var testGasLimit uint64 = 200_000
@@ -387,7 +387,7 @@ func (s *IntegrationTestSuite) TestGlobalFeeMinimumGasFeeAnteHandler() {
 			txCheck:  true,
 			expErr:   false,
 		},
-		// cases from https://github.com/cosmos/gaia/pull/1570#issuecomment-1190524402
+		// cases from https://github.com/onomyprotocol/onomy/pull/1570#issuecomment-1190524402
 		// note: this is kind of a silly scenario but technically correct
 		// if there is a zero coin in the globalfee, the user could pay 0fees
 		// if the user includes any fee at all in the non-zero denom, it must be higher than that non-zero fee

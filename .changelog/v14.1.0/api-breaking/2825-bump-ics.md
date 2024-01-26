@@ -1,1 +1,1 @@
-- Deprecate equivocation proposals of ICS provider module ([\#2825](https://github.com/cosmos/gaia/pull/2825))
+- Deprecate equivocation proposals of ICS provider module ([\#2825](https://github.com/onomyprotocol/onomy/pull/2825))

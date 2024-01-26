@@ -54,7 +54,7 @@ Consider running your own [Cosmos Hub Full Node](../hub-tutorials/join-mainnet.m
 The command-line interface (CLI) is the most powerful tool to access the Cosmos Hub and use gaia.
 To use the CLI, you must install the latest version of `gaia` on your machine.
 
-Compare your version with the [latest release version](https://github.com/cosmos/gaia/releases)
+Compare your version with the [latest release version](https://github.com/onomyprotocol/onomy/releases)
 
 ```bash
 gaiad version --long

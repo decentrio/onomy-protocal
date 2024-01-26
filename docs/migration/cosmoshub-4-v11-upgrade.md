@@ -6,7 +6,7 @@ order: 7
 # Cosmos Hub 4, Gaia v11 Upgrade, Instructions
 
 This document describes the steps for validators and full node operators, to upgrade successfully to the Gaia v11 release. 
-For more details on the release, please see the [release notes](https://github.com/cosmos/gaia/releases/tag/v11.0.0)
+For more details on the release, please see the [release notes](https://github.com/onomyprotocol/onomy/releases/tag/v11.0.0)
 
 ## Instructions
   
@@ -77,11 +77,11 @@ For those validator and full node operators that are interested in ensuring prep
 
 ### Current runtime
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v10.0.2](https://github.com/cosmos/gaia/releases/v10.0.2). We anticipate that operators who are running on v10.0.x, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
+The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v10.0.2](https://github.com/onomyprotocol/onomy/releases/v10.0.2). We anticipate that operators who are running on v10.0.x, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
 
 ### Target runtime
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v11.0.0](https://github.com/cosmos/gaia/releases/tag/v11.0.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v11.0.0](https://github.com/onomyprotocol/onomy/releases/tag/v11.0.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -96,7 +96,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ### Method I: Manual Upgrade
 
-Make sure Gaia v11.0.0 is installed by either downloading a [compatible binary](https://github.com/cosmos/gaia/releases/tag/v11.0.0), or building from source. Building from source requires **Golang 1.20**.
+Make sure Gaia v11.0.0 is installed by either downloading a [compatible binary](https://github.com/onomyprotocol/onomy/releases/tag/v11.0.0), or building from source. Building from source requires **Golang 1.20**.
 
 Run Gaia v10.0.x till upgrade height, the node will panic:
 

@@ -25,14 +25,14 @@ Si tienes un explorador de bloques, un monedero, un exchange, un validador o cua
 1. [Migración de aplicaciones y módulos](ttps://github.com/cosmos/cosmos-sdk/blob/master/docs/migrations/app_and_modules.md)
 1. [Guía de actualización de la cadena a v0.41](https://github.com/cosmos/cosmos-sdk/blob/master/docs/migrations/chain-upgrade-guide-040.md)
 1. [Migración de endpoints REST](https://github.com/cosmos/cosmos-sdk/blob/master/docs/migrations/rest.md)
-1. [Recopilación de modificaciones de ruptura de los registros de cambios](https://github.com/cosmos/gaia/blob/main/docs/migration/breaking_changes.md)
+1. [Recopilación de modificaciones de ruptura de los registros de cambios](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/breaking_changes.md)
 1. [Comunicación entre cadenas de bloques (IBC) - transacciones entre cadenas](https://figment.io/resources/cosmos-stargate-upgrade-overview/#ibc)
 1. [Migración de Protobuf - rendimiento de la cadena de bloques y aceleración del desarrollo](https://figment.io/resources/cosmos-stargate-upgrade-overview/#proto)
 1. [Sincronización de estados - minutos para sincronizar nuevos nodos](https://figment.io/resources/cosmos-stargate-upgrade-overview/#sync)
 1. [Clientes ligeros con todas las funciones](https://figment.io/resources/cosmos-stargate-upgrade-overview/#light)
 1. [Módulo de actualización de la cadena - automatización de la actualización](https://figment.io/resources/cosmos-stargate-upgrade-overview/#upgrade)
 
-Si quieres probar el procedimiento antes de que se produzca la actualización el 18 de febrero, consulta este [post](https://github.com/cosmos/gaia/issues/569#issuecomment-767910963) en relación a ello.
+Si quieres probar el procedimiento antes de que se produzca la actualización el 18 de febrero, consulta este [post](https://github.com/onomyprotocol/onomy/issues/569#issuecomment-767910963) en relación a ello.
 
 ## Preliminares
 
@@ -40,7 +40,7 @@ Se han producido muchos cambios en el SDK de Cosmos y en la aplicación Gaia des
 
 En primer lugar, se habilitará [IBC](https://docs.cosmos.network/main/ibc/overview.html) siguiendo los [estándares de Interchain](https://github.com/cosmos/ics#ibc-quick-references). Esta actualización viene con varias mejoras en la eficiencia, la sincronización de nodos y las siguientes actualizaciones de la cadena de bloques. Más detalles en el [sitio web de Stargate](https://stargate.cosmos.network/).
 
-__La aplicación [Gaia](https://github.com/cosmos/gaia) v4.0.0 es lo que los operadores de nodos actualizarán y ejecutarán en esta próxima gran actualización__. Tras la versión v0.41.0 del SDK de Cosmos y la v0.34.3 de Tendermint.
+__La aplicación [Gaia](https://github.com/onomyprotocol/onomy) v4.0.0 es lo que los operadores de nodos actualizarán y ejecutarán en esta próxima gran actualización__. Tras la versión v0.41.0 del SDK de Cosmos y la v0.34.3 de Tendermint.
 
 ## Principales actualizaciones
 
@@ -125,13 +125,13 @@ El hash de la versión/commit de Gaia v2.0.15: `89cf7e6fc166eaabf47ad2755c443d45
    [SHA256_VALUE]  cosmoshub_3_genesis_export.json
    ```
 
-1. En este punto, ya tiene un estado de génesis exportado válido. Todos los pasos posteriores requieren ahora v4.0.0 de [Gaia](https://github.com/cosmos/gaia).
+1. En este punto, ya tiene un estado de génesis exportado válido. Todos los pasos posteriores requieren ahora v4.0.0 de [Gaia](https://github.com/onomyprotocol/onomy).
 Compruebe el hash de su génesis con otros compañeros (otros validadores) en las salas de chat.
 
    __NOTA__: Go [1.15+](https://golang.org/dl/) es necesario!
 
    ```bash
-   git clone https://github.com/cosmos/gaia.git && cd gaia && git checkout v4.0.0; make install
+   git clone https://github.com/onomyprotocol/onomy.git && cd gaia && git checkout v4.0.0; make install
    ```
 
 1. Verifique que está ejecutando la versión correcta (v4.0.0) de _Gaia_:

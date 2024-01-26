@@ -82,7 +82,7 @@ Cosmos Stargate integration success with exchanges and wallet providers reflects
 
 ## Prop 29
 
-This upgrade also implements the fund recovery procedure defined in proposal 29. The code is [here](https://github.com/cosmos/gaia/blob/main/app/prop29.go). As requested during the discussion of the governance proposal, the migration and fund recovery procedure verifies all signatures. This code was tested during the cosmoshub-3 simulated upgrade testnet.
+This upgrade also implements the fund recovery procedure defined in proposal 29. The code is [here](https://github.com/onomyprotocol/onomy/blob/main/app/prop29.go). As requested during the discussion of the governance proposal, the migration and fund recovery procedure verifies all signatures. This code was tested during the cosmoshub-3 simulated upgrade testnet.
 
 ## Stargate Upgrade Steps
 

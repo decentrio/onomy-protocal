@@ -5,7 +5,7 @@ title: Joining Mainnet
 
 # Join the Cosmos Hub Mainnet
 
-The current Cosmos Hub mainnet, `cosmoshub-4`, has been performing in place store migration upgrades as of the [Delta Upgrade](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-4-delta-upgrade.md) July 2021. The most recent upgrade is [Gaia v14.1.x](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-4-v14-upgrade.md) Dec 2023.
+The current Cosmos Hub mainnet, `cosmoshub-4`, has been performing in place store migration upgrades as of the [Delta Upgrade](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-4-delta-upgrade.md) July 2021. The most recent upgrade is [Gaia v14.1.x](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-4-v14-upgrade.md) Dec 2023.
 This type of upgrade preserves the same chain-id but state before the upgrade height is only accessible by corresponding versions of the binary:
 
 ## Release History
@@ -22,7 +22,7 @@ This type of upgrade preserves the same chain-id but state before the upgrade he
 - use `gaia v13.x` between `17,380,000` and `18,262,000`
 - use `gaia v14.1.x` from `18,262,000`
 
-For more details, see the [history of upgrades](https://github.com/cosmos/gaia/tree/main/docs/roadmap) or visit the [migration section](https://github.com/cosmos/gaia/tree/main/docs/migration) of the Hub's docs.
+For more details, see the [history of upgrades](https://github.com/onomyprotocol/onomy/tree/main/docs/roadmap) or visit the [migration section](https://github.com/onomyprotocol/onomy/tree/main/docs/migration) of the Hub's docs.
 
 **This guide includes full instructions for joining the mainnet either as an archive/full node or a pruned node.**
 
@@ -61,7 +61,7 @@ For instructions to join as a validator, please also see the [Validator Guide](h
 
 ### Background
 
-The current Cosmos Hub mainnet `cosmoshub-4`. Visit the [migration section](https://github.com/cosmos/gaia/tree/main/docs/migration) of the Hub's docs for more information on previous chain migrations.
+The current Cosmos Hub mainnet `cosmoshub-4`. Visit the [migration section](https://github.com/onomyprotocol/onomy/tree/main/docs/migration) of the Hub's docs for more information on previous chain migrations.
 
 ## Explorers
 
@@ -387,15 +387,15 @@ snapshot-keep-recent = 10
 
 ## Releases & Upgrades
 
-**See all [Gaia Releases](https://github.com/cosmos/gaia/releases)**
+**See all [Gaia Releases](https://github.com/onomyprotocol/onomy/releases)**
 
 The most up to date release of Gaia is above. For those that want to use state sync or quicksync to get their node up to speed, starting with the most recent version of Gaia is sufficient.
 
-To sync an archive or full node from scratch, it is important to note that you must start with [`V4.2.1`](https://github.com/cosmos/gaia/releases/tag/v4.2.1) and proceed through two different upgrades Delta at block height `6,910,000`, Vega at block height `8,695,000`, Theta at block height `10,085,397`, Rho at block height `14099412` and Lambda at block height `14,470,501` and so on.
+To sync an archive or full node from scratch, it is important to note that you must start with [`V4.2.1`](https://github.com/onomyprotocol/onomy/releases/tag/v4.2.1) and proceed through two different upgrades Delta at block height `6,910,000`, Vega at block height `8,695,000`, Theta at block height `10,085,397`, Rho at block height `14099412` and Lambda at block height `14,470,501` and so on.
 
 The process is summarized below but make sure to follow the manual upgrade instructions for each release:
 
-**[Delta Instructions](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-4-delta-upgrade.md#Upgrade-will-take-place-July-12,-2021)**
+**[Delta Instructions](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-4-delta-upgrade.md#Upgrade-will-take-place-July-12,-2021)**
 
 Once `V4` reaches the upgrade block height, expect the chain to halt and to see the following message:
 
@@ -405,9 +405,9 @@ ERR UPGRADE "Gravity-DEX" NEEDED at height: 6910000: v5.0.0-4760cf1f1266accec7a1
 
 Make sure to save a backup of `~/.gaia` in case rolling back is necessary.
 
-Install Gaia [`V5.0.0`](https://github.com/cosmos/gaia/releases/tag/v5.0.0) and restart the daemon.
+Install Gaia [`V5.0.0`](https://github.com/onomyprotocol/onomy/releases/tag/v5.0.0) and restart the daemon.
 
-**[Vega Instructions](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-4-vega-upgrade.md)**
+**[Vega Instructions](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-4-vega-upgrade.md)**
 
 Once `V5` reaches the upgrade block height, the chain will halt and display the following message:
 
@@ -417,9 +417,9 @@ ERR UPGRADE "Vega" NEEDED at height: 8695000
 
 Again, make sure to backup `~/.gaia`
 
-Install Gaia [`V6.0.0`](https://github.com/cosmos/gaia/releases/tag/v6.0.0) and restart the daemon.
+Install Gaia [`V6.0.0`](https://github.com/onomyprotocol/onomy/releases/tag/v6.0.0) and restart the daemon.
 
-**[Theta Instructions](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-4-v7-Theta-upgrade.md)**
+**[Theta Instructions](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-4-v7-Theta-upgrade.md)**
 
 Once `V6` reaches the upgrade block height, the chain will halt and display the following message:
 
@@ -429,10 +429,10 @@ ERR UPGRADE "Theta" NEEDED at height: 10085397
 
 Again, make sure to backup `~/.gaia`
 
-Install Gaia [`V7.0.0`](https://github.com/cosmos/gaia/releases/tag/v7.0.0) and restart the daemon.
+Install Gaia [`V7.0.0`](https://github.com/onomyprotocol/onomy/releases/tag/v7.0.0) and restart the daemon.
 
 
-**[Rho Instructions](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-4-v8-Rho-upgrade.md)**
+**[Rho Instructions](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-4-v8-Rho-upgrade.md)**
 
 Once `V7` reaches the upgrade block height, the chain will halt and display the following message:
 
@@ -442,9 +442,9 @@ ERR UPGRADE "Rho" NEEDED at height: 14099412
 
 Again, make sure to backup `~/.gaia`
 
-Install Gaia [`V8.0.0`](https://github.com/cosmos/gaia/releases/tag/v8.0.0) and restart the daemon.
+Install Gaia [`V8.0.0`](https://github.com/onomyprotocol/onomy/releases/tag/v8.0.0) and restart the daemon.
 
-**[Lambda Instructions](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-4-v9-Lambda-upgrade.md)**
+**[Lambda Instructions](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-4-v9-Lambda-upgrade.md)**
 
 Once `V8` reaches the upgrade block height, the chain will halt and display the following message:
 
@@ -454,7 +454,7 @@ ERR UPGRADE "Lambda" NEEDED at height: 14470501
 
 Again, make sure to backup `~/.gaia`
 
-Install Gaia [`V9.0.0`](https://github.com/cosmos/gaia/releases/tag/v9.0.0) and restart the daemon.
+Install Gaia [`V9.0.0`](https://github.com/onomyprotocol/onomy/releases/tag/v9.0.0) and restart the daemon.
 
 Repeat the process for newer versions of the Gaia application at the [stated block heights above](#release-history).
 

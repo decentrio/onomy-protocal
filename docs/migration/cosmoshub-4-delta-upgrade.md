@@ -5,7 +5,7 @@ order: 1
 <!-- markdown-link-check-disable -->
 # Cosmos Hub 4, Delta Upgrade, Instructions
 
-This document describes the steps for validator and full node operators for the successful execution of the [Delta Upgrade](https://github.com/cosmos/gaia/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md#Delta-Upgrade), which adds the __Gravity DEX__ to the Cosmos Hub.
+This document describes the steps for validator and full node operators for the successful execution of the [Delta Upgrade](https://github.com/onomyprotocol/onomy/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md#Delta-Upgrade), which adds the __Gravity DEX__ to the Cosmos Hub.
 
 TOC:
 
@@ -55,11 +55,11 @@ Validator and full node operators that wish to test their systems on a public te
 
 ### Current runtime, cosmoshub-4 (pre-Delta upgrade) is running Gaia v4.2.1
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v4.2.1](https://github.com/cosmos/gaia/releases/tag/v4.2.1). We anticipate that operators who are running earlier versions of Gaia, e.g., v4.2.x, will be able to upgrade successfully; however, this is untested and it is up to operators to ensure that their systems are capable of performing the upgrade.
+The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v4.2.1](https://github.com/onomyprotocol/onomy/releases/tag/v4.2.1). We anticipate that operators who are running earlier versions of Gaia, e.g., v4.2.x, will be able to upgrade successfully; however, this is untested and it is up to operators to ensure that their systems are capable of performing the upgrade.
 
 ### Target runtime, cosmoshub-4 (post-Delta upgrade) will run Gaia v5.0.0
 
-The Comsos Hub mainnet network, `cosmoshub-4`, will run [Gaia v5.0.0](https://github.com/cosmos/gaia/releases/tag/v5.0.0). Operators _MUST_ use this version post-upgrade to remain connected to the network.
+The Comsos Hub mainnet network, `cosmoshub-4`, will run [Gaia v5.0.0](https://github.com/onomyprotocol/onomy/releases/tag/v5.0.0). Operators _MUST_ use this version post-upgrade to remain connected to the network.
 
 ## Delta upgrade steps
 

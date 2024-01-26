@@ -32,7 +32,7 @@ The table below shows all past and upcoming versions of the public testnet.
 | v7.0.0-rc0  |      9,283,650       |     2022-03-17      |
 |   v6.0.0    |       Genesis        | Launched 2022-03-10 |
 
-See the [Gaia release page](https://github.com/cosmos/gaia/releases) for details on each release.
+See the [Gaia release page](https://github.com/onomyprotocol/onomy/releases) for details on each release.
 
 ## How to Join
 
@@ -77,7 +77,7 @@ export PATH=$PATH:/usr/local/go/bin
 
 ### Installation & Configuration
 
-You will need to install and configure the Gaia binary using the script below. The Cosmos Hub Public Testnet is running Gaia [`v13.0.0-rc0`](https://github.com/cosmos/gaia/releases/tag/v13.0.0-rc0).
+You will need to install and configure the Gaia binary using the script below. The Cosmos Hub Public Testnet is running Gaia [`v13.0.0-rc0`](https://github.com/onomyprotocol/onomy/releases/tag/v13.0.0-rc0).
 
 * For up-to-date endpoints like seeds and state sync RPC servers, visit the [testnets repository](https://github.com/cosmos/testnets/tree/master/public).
 
@@ -85,7 +85,7 @@ Build the gaiad binary and initialize the chain home folder.
 
 ```shell
 cd $HOME
-git clone https://github.com/cosmos/gaia
+git clone https://github.com/onomyprotocol/onomy
 cd gaia
 # To sync from genesis, comment out the next line.
 git checkout v13.0.0-rc0

@@ -1,10 +1,10 @@
 ## [v10.0.1] 2023-05-25
 
-* (deps) [#2543](https://github.com/cosmos/gaia/pull/2543) Bump [ibc-go](https://github.com/cosmos/ibc-go) to [v4.4.1](https://github.com/cosmos/ibc-go/releases/tag/v4.4.1).
+* (deps) [#2543](https://github.com/onomyprotocol/onomy/pull/2543) Bump [ibc-go](https://github.com/cosmos/ibc-go) to [v4.4.1](https://github.com/cosmos/ibc-go/releases/tag/v4.4.1).
 
 ## [v10.0.0] 2023-05-19
 
-* (deps) [#2498](https://github.com/cosmos/gaia/pull/2498) Bump multiple dependencies. 
+* (deps) [#2498](https://github.com/onomyprotocol/onomy/pull/2498) Bump multiple dependencies. 
   * Bump [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) to [v0.45.16-ics](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.16-ics). See the [v0.45.16 release notes](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.16) for details. 
   * Bump [ibc-go](https://github.com/cosmos/ibc-go) to [v4.4.0](https://github.com/cosmos/ibc-go/releases/tag/v4.4.0).
   * Bump [CometBFT](https://github.com/cometbft/cometbft) to [v0.34.28](https://github.com/cometbft/cometbft/releases/tag/v0.34.28).
@@ -12,11 +12,11 @@
 
 ## [v9.1.1] - 2023-05-25
 
-* (deps) [#2542](https://github.com/cosmos/gaia/pull/2542) Bump [ibc-go](https://github.com/cosmos/ibc-go) to [v4.2.1](https://github.com/cosmos/ibc-go/releases/tag/v4.2.1).
+* (deps) [#2542](https://github.com/onomyprotocol/onomy/pull/2542) Bump [ibc-go](https://github.com/cosmos/ibc-go) to [v4.2.1](https://github.com/cosmos/ibc-go/releases/tag/v4.2.1).
 
 ## [v9.1.0] - 2023-05-08
 
-* (fix) [#2474](https://github.com/cosmos/gaia/pull/2474) Multisig and distribution fix in [Interchain-Security](https://github.com/cosmos/interchain-security). Bump Interchain-Security to [v1.1.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.1.0-multiden).
+* (fix) [#2474](https://github.com/onomyprotocol/onomy/pull/2474) Multisig and distribution fix in [Interchain-Security](https://github.com/cosmos/interchain-security). Bump Interchain-Security to [v1.1.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.1.0-multiden).
 
 This release combines two fixes that we judged were urgent to get onto the Cosmos Hub before the launch of the first ICS consumer chain. _Please note that user funds were not at risk and these fixes pertain to the liveness of the Hub and consumer chains_.
 
@@ -41,18 +41,18 @@ To fix this problem, we have re-blocked the FeePoolAddress and created a new add
 Note: The fee of 10 Atoms was originally intended to be a parameter that could be changed by governance (10 Atoms might cost too much in the future). However, we ran into some problems creating a new parameter as part of an emergency upgrade. After consulting with the Cosmos-SDK team, we learned that creating new parameters is only supported as part of a scheduled upgrade. So in the current code, the number of Atoms is hardcoded. It will turn into a parameter in the next scheduled upgrade.
 
 ## [v9.0.3] - 2023-04-19
-* (deps) [#2399](https://github.com/cosmos/gaia/pull/2399) Bump [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) to [v0.45.15-ics](https://github.com/cosmos/cosmos
+* (deps) [#2399](https://github.com/onomyprotocol/onomy/pull/2399) Bump [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) to [v0.45.15-ics](https://github.com/cosmos/cosmos
 sdk/releases/tag/v0.45.15-ics) and migrate to [CometBFT](https://github.com/cometbft/cometbft).
 
 ## [v9.0.2] - 2023-04-03
 * (feat) Bump [Interchain-Security](https://github.com/cosmos/interchain-security) [v1.1.0](https://github.com/cosmos/interchain-security/releases/tag/v1.1.0) provider module. See the [release notes](https://github.com/cosmos/interchain-security/releases/tag/v1.1.0) for details.
 * (feat) Add two more msg types `/ibc.core.channel.v1.MsgTimeout` and `/ibc.core.channel.v1.MsgTimeoutOnClose` to default `bypass-min-fee-msg-types`.
 * (feat) Change the bypassing gas usage criteria. Instead of requiring 200,000 gas per `bypass-min-fee-msg`, we will now allow a maximum total usage of 1,000,000 gas for all bypassed messages in a transaction. Note that all messages in the transaction must be the `bypass-min-fee-msg-types` for the bypass min fee to take effect, otherwise, fee payment will still apply.
-* (fix) [#2087](https://github.com/cosmos/gaia/issues/2087) Fix `bypass-min-fee-msg-types` parsing in `app.toml`. Parsing of `bypass-min-fee-types` is changed to allow node operators to use empty bypass list. Removing the `bypass-min-fee-types` from `app.toml` applies the default message types. See [#2092](https://github.com/cosmos/gaia/pull/2092) for details.
+* (fix) [#2087](https://github.com/onomyprotocol/onomy/issues/2087) Fix `bypass-min-fee-msg-types` parsing in `app.toml`. Parsing of `bypass-min-fee-types` is changed to allow node operators to use empty bypass list. Removing the `bypass-min-fee-types` from `app.toml` applies the default message types. See [#2092](https://github.com/onomyprotocol/onomy/pull/2092) for details.
 
 ## [v9.0.1] - 2023-03-09
 
-* (feat) [Add spam prevention antehandler](https://github.com/cosmos/gaia/pull/2262) to alleviate recent governance spam issues.
+* (feat) [Add spam prevention antehandler](https://github.com/onomyprotocol/onomy/pull/2262) to alleviate recent governance spam issues.
 
 ## [v9.0.0] - 2023-02-21
 
@@ -61,9 +61,9 @@ sdk/releases/tag/v0.45.15-ics) and migrate to [CometBFT](https://github.com/come
 * (gaia) Bump [ibc-go](https://github.com/cosmos/ibc-go) to [v4.2.0](https://github.com/cosmos/ibc-go/blob/release/v4.2.x/CHANGELOG.md). See [v4.2 Release Notes](https://github.com/cosmos/ibc-go/releases/tag/v4.2.0) for details.
 * (gaia) Bump [tendermint](https://github.com/informalsystems/tendermint) to [0.34.26](https://github.com/informalsystems/tendermint/tree/v0.34.26). See [CHANGELOG.md](https://github.com/informalsystems/tendermint/blob/v0.34.26/CHANGELOG.md#v03426) for details.
 * (gaia) Bump [packet-forward-middleware](https://github.com/strangelove-ventures/packet-forward-middleware) to [v4.0.4](https://github.com/strangelove-ventures/packet-forward-middleware/releases/tag/v4.0.4).
-* (tests) Add [E2E ccv tests](https://github.com/cosmos/gaia/blob/main/tests/e2e/e2e_gov_test.go#L138). Tests covering new functionality introduced by the provider module to add and remove a consumer chain via governance proposal.
-* (tests) Add [integration ccv tests](https://github.com/cosmos/gaia/blob/main/tests/ics/interchain_security_test.go). Imports Interchain-Security's `TestCCVTestSuite` and implements Gaia as the provider chain.
-* (fix) [#2017](https://github.com/cosmos/gaia/issues/2017) Fix Gaiad binary build tag for ubuntu system. See [#2018](https://github.com/cosmos/gaia/pull/2018) for details.
+* (tests) Add [E2E ccv tests](https://github.com/onomyprotocol/onomy/blob/main/tests/e2e/e2e_gov_test.go#L138). Tests covering new functionality introduced by the provider module to add and remove a consumer chain via governance proposal.
+* (tests) Add [integration ccv tests](https://github.com/onomyprotocol/onomy/blob/main/tests/ics/interchain_security_test.go). Imports Interchain-Security's `TestCCVTestSuite` and implements Gaia as the provider chain.
+* (fix) [#2017](https://github.com/onomyprotocol/onomy/issues/2017) Fix Gaiad binary build tag for ubuntu system. See [#2018](https://github.com/onomyprotocol/onomy/pull/2018) for details.
 
 ## [v8.0.1] - 2023-02-17
 
@@ -77,15 +77,15 @@ sdk/releases/tag/v0.45.15-ics) and migrate to [CometBFT](https://github.com/come
 * (gaia) Bump [tendermint](https://github.com/informalsystems/tendermint) to [0.34.24](https://github.com/informalsystems/tendermint/tree/v0.34.24). See [CHANGELOG.md](https://github.com/informalsystems/tendermint/blob/v0.34.24/CHANGELOG.md) for details.
 * (gaia) Bump [liquidity](https://github.com/Gravity-Devs/liquidity) to [v1.5.3](https://github.com/Gravity-Devs/liquidity/releases/tag/v1.5.3).
 * (gaia) Bump [packet-forward-middleware](https://github.com/strangelove-ventures/packet-forward-middleware) to [v3.1.1](https://github.com/strangelove-ventures/packet-forward-middleware/releases/tag/v3.1.1).
-* (feat) Add [globalfee](https://github.com/cosmos/gaia/tree/main/x/globalfee) module. See [globalfee docs](https://github.com/cosmos/gaia/blob/main/docs/modules/globalfee.md) for more details.
-* (feat) [#1845](https://github.com/cosmos/gaia/pull/1845) Add bech32-convert command to gaiad.
-* (fix) [#2080](https://github.com/cosmos/gaia/issues/2074) Reintroduce deleted configuration for client rpc endpoints, transaction routes, and module REST routes in app.go.
-* (fix) [Add new fee decorator](https://github.com/cosmos/gaia/pull/1961) to change `MaxBypassMinFeeMsgGasUsage` so importers of x/globalfee can change `MaxGas`.
-* (fix) [#1870](https://github.com/cosmos/gaia/issues/1870) Fix bank denom metadata in migration. See [#1892](https://github.com/cosmos/gaia/pull/1892) for more details.
-* (fix) [#1976](https://github.com/cosmos/gaia/pull/1976) Fix Quicksilver ICA exploit in migration. See [the bug fix forum post](https://forum.cosmos.network/t/upcoming-interchain-accounts-bugfix-release/8911) for more details.
-* (tests) Add [E2E tests](https://github.com/cosmos/gaia/tree/main/tests/e2e). The tests cover transactions/queries tests of different modules, including Bank, Distribution, Encode, Evidence, FeeGrant, Global Fee, Gov, IBC, packet forwarding middleware, Slashing, Staking, and Vesting module.
-* (tests) [#1941](https://github.com/cosmos/gaia/pull/1941) Fix packet forward configuration for e2e tests.
-* (tests) Use gaiad to swap out [Ignite](https://github.com/ignite/cli) in [liveness tests](https://github.com/cosmos/gaia/blob/main/.github/workflows/test.yml).
+* (feat) Add [globalfee](https://github.com/onomyprotocol/onomy/tree/main/x/globalfee) module. See [globalfee docs](https://github.com/onomyprotocol/onomy/blob/main/docs/modules/globalfee.md) for more details.
+* (feat) [#1845](https://github.com/onomyprotocol/onomy/pull/1845) Add bech32-convert command to gaiad.
+* (fix) [#2080](https://github.com/onomyprotocol/onomy/issues/2074) Reintroduce deleted configuration for client rpc endpoints, transaction routes, and module REST routes in app.go.
+* (fix) [Add new fee decorator](https://github.com/onomyprotocol/onomy/pull/1961) to change `MaxBypassMinFeeMsgGasUsage` so importers of x/globalfee can change `MaxGas`.
+* (fix) [#1870](https://github.com/onomyprotocol/onomy/issues/1870) Fix bank denom metadata in migration. See [#1892](https://github.com/onomyprotocol/onomy/pull/1892) for more details.
+* (fix) [#1976](https://github.com/onomyprotocol/onomy/pull/1976) Fix Quicksilver ICA exploit in migration. See [the bug fix forum post](https://forum.cosmos.network/t/upcoming-interchain-accounts-bugfix-release/8911) for more details.
+* (tests) Add [E2E tests](https://github.com/onomyprotocol/onomy/tree/main/tests/e2e). The tests cover transactions/queries tests of different modules, including Bank, Distribution, Encode, Evidence, FeeGrant, Global Fee, Gov, IBC, packet forwarding middleware, Slashing, Staking, and Vesting module.
+* (tests) [#1941](https://github.com/onomyprotocol/onomy/pull/1941) Fix packet forward configuration for e2e tests.
+* (tests) Use gaiad to swap out [Ignite](https://github.com/ignite/cli) in [liveness tests](https://github.com/onomyprotocol/onomy/blob/main/.github/workflows/test.yml).
 
 ## [v7.1.1] - 2023-02-06
 
@@ -98,12 +98,12 @@ sdk/releases/tag/v0.45.15-ics) and migrate to [CometBFT](https://github.com/come
 * (gaia) update go to 1.18.
 * (gaia) bump [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) to [v0.45.6](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.6). See [CHANGELOG.md](https://github.com/cosmos/cosmos-sdk/blob/v0.45.6/CHANGELOG.md) for details.
 * (gaia) bump [Liquidity](https://github.com/Gravity-Devs/liquidity) module to [v1.5.1](https://github.com/Gravity-Devs/liquidity/releases/tag/v1.5.1).
-* (gaia) bump [cosmos ledger](https://github.com/cosmos/ledger-go) to [v0.9.3](https://github.com/cosmos/ledger-go/releases/tag/v0.9.3) to fix issue [#1573](https://github.com/cosmos/gaia/issues/1573) - Ledger Nano S Plus not detected by gaiad.
+* (gaia) bump [cosmos ledger](https://github.com/cosmos/ledger-go) to [v0.9.3](https://github.com/cosmos/ledger-go/releases/tag/v0.9.3) to fix issue [#1573](https://github.com/onomyprotocol/onomy/issues/1573) - Ledger Nano S Plus not detected by gaiad.
 * 
 ## [v7.0.2] -2022-05-09
 
 * (gaia) bump [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) to [v0.45.4](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.4). See [CHANGELOG.md](https://github.com/cosmos/cosmos-sdk/blob/v0.45.4/CHANGELOG.md#v0454---2022-04-25) for details.
-* (gaia) [#1447](https://github.com/cosmos/gaia/pull/1447) Support custom message types to bypass minimum fee checks for.
+* (gaia) [#1447](https://github.com/onomyprotocol/onomy/pull/1447) Support custom message types to bypass minimum fee checks for.
   If a transaction contains only bypassed message types, the transaction will not have minimum fee
   checks performed during `CheckTx`. Operators can supply these message types via the `bypass-min-fee-msg-types`
   configuration in `app.toml`. Note, by default they include various IBC message types.
@@ -127,12 +127,12 @@ sdk/releases/tag/v0.45.15-ics) and migrate to [CometBFT](https://github.com/come
 
 * (gaia) Bump [Liquidity](https://github.com/gravity-devs/liquidity) module to [v1.4.6](https://github.com/Gravity-Devs/liquidity/releases/tag/v1.4.6).
 * (gaia) Bump [IBC](https://github.com/cosmos/ibc-go) module to [2.0.3](https://github.com/cosmos/ibc-go/releases/tag/v2.0.3).
-* (gaia) [#1230](https://github.com/cosmos/gaia/pull/1230) Fix: update gRPC Web Configuration in `contrib/testnets/test_platform`.
-* (gaia) [#1135](https://github.com/cosmos/gaia/pull/1135) Fix rocksdb build tag usage.
-* (gaia) [#1160](https://github.com/cosmos/gaia/pull/1160) Improvement: update state sync configs.
-* (gaia) [#1208](https://github.com/cosmos/gaia/pull/1208) Update statesync.bash.
+* (gaia) [#1230](https://github.com/onomyprotocol/onomy/pull/1230) Fix: update gRPC Web Configuration in `contrib/testnets/test_platform`.
+* (gaia) [#1135](https://github.com/onomyprotocol/onomy/pull/1135) Fix rocksdb build tag usage.
+* (gaia) [#1160](https://github.com/onomyprotocol/onomy/pull/1160) Improvement: update state sync configs.
+* (gaia) [#1208](https://github.com/onomyprotocol/onomy/pull/1208) Update statesync.bash.
   * * (gaia) Bump [Cosmos-SDK](https://github.com/cosmos/cosmos-sdk) to [v0.44.6](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.44.6)
-* (gaia) Bump [Versions](https://github.com/cosmos/gaia/pull/1100) of various smaller dependencies, remove the Cosmos SDK replace statement, update `initiClientCtx` params, ensure `stdout` and `stderr` are handled correctly in the CLI.
+* (gaia) Bump [Versions](https://github.com/onomyprotocol/onomy/pull/1100) of various smaller dependencies, remove the Cosmos SDK replace statement, update `initiClientCtx` params, ensure `stdout` and `stderr` are handled correctly in the CLI.
 
 ## [v6.0.3] - 2022-02-18
 
@@ -155,7 +155,7 @@ sdk/releases/tag/v0.45.15-ics) and migrate to [CometBFT](https://github.com/come
 * (gaia) Bump [Cosmos SDK](https://github.com/cosmos/cosmos-sdk) to [v0.44.3](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.44.3). See the [CHANGELOG.md](https://github.com/cosmos/cosmos-sdk/blob/release/v0.44.x/CHANGELOG.md#v0443---2021-10-21) for details.
 * (gaia) Add [IBC](https://github.com/cosmos/ibc-go) as a standalone module from the Cosmos SDK using version [v2.0.0](https://github.com/cosmos/ibc-go/releases/tag/v2.0.0). See the [CHANGELOG.md](https://github.com/cosmos/ibc-go/blob/v2.0.0/CHANGELOG.md) for details.
 * (gaia) Add [packet-forward-middleware](https://github.com/strangelove-ventures/packet-forward-middleware) [v1.0.1](https://github.com/strangelove-ventures/packet-forward-middleware/releases/tag/v1.0.1).
-* (gaia) [#969](https://github.com/cosmos/gaia/issues/969) Remove legacy migration code.
+* (gaia) [#969](https://github.com/onomyprotocol/onomy/issues/969) Remove legacy migration code.
 
 ## [v5.0.8] - 2021-10-14
 
@@ -229,7 +229,7 @@ This release removes unnecessary dependencies.
 
 ### Bug Fixes
 
-* (gaia)  [\#781](https://github.com/cosmos/gaia/pull/781) Remove unnecessary dependencies
+* (gaia)  [\#781](https://github.com/onomyprotocol/onomy/pull/781) Remove unnecessary dependencies
 
 ## [v4.1.1] - 2021-03-19
 
@@ -292,43 +292,43 @@ This release fixes build failures caused by a small API breakage introduced in t
 This release fixes a downstream security issue which impacts Cosmos SDK users.
 See the [Tendermint v0.34.7 SDK changelog](https://github.com/tendermint/tendermint/blob/v0.34.x/CHANGELOG.md#v0347) for details.
 
-* (sdk) [\#640](https://github.com/cosmos/gaia/pull/640) Bump SDK version to [v0.41.2](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.2).
-* (tendermint) [\#640](https://github.com/cosmos/gaia/pull/640) Bump Tendermint version to [v0.34.7](https://github.com/tendermint/tendermint/releases/tag/v0.34.7).
+* (sdk) [\#640](https://github.com/onomyprotocol/onomy/pull/640) Bump SDK version to [v0.41.2](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.2).
+* (tendermint) [\#640](https://github.com/onomyprotocol/onomy/pull/640) Bump Tendermint version to [v0.34.7](https://github.com/tendermint/tendermint/releases/tag/v0.34.7).
 
 ## [v4.0.1] - 2021-02-17
 
 ### Bug Fixes
 
-* (sdk) [\#579](https://github.com/cosmos/gaia/pull/635) Bump SDK version to [v0.41.1](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.1).
-* (tendermint) [\#622](https://github.com/cosmos/gaia/pull/622) Bump Tendermint version to [v0.34.4](https://github.com/tendermint/tendermint/releases/tag/v0.34.4).
+* (sdk) [\#579](https://github.com/onomyprotocol/onomy/pull/635) Bump SDK version to [v0.41.1](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.1).
+* (tendermint) [\#622](https://github.com/onomyprotocol/onomy/pull/622) Bump Tendermint version to [v0.34.4](https://github.com/tendermint/tendermint/releases/tag/v0.34.4).
 
 ## [v4.0.0] - 2021-01-26
 
 ### Improvements
 
-* (app) [\#564](https://github.com/cosmos/gaia/pull/564) Add client denomination metadata for atoms.
+* (app) [\#564](https://github.com/onomyprotocol/onomy/pull/564) Add client denomination metadata for atoms.
 
 ### Bug Fixes
 
-* (cmd) [\#563](https://github.com/cosmos/gaia/pull/563) Add balance coin to supply when adding a new genesis account
-* (sdk) [\#579](https://github.com/cosmos/gaia/pull/579) Bump SDK version to [v0.41.0](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.0).
+* (cmd) [\#563](https://github.com/onomyprotocol/onomy/pull/563) Add balance coin to supply when adding a new genesis account
+* (sdk) [\#579](https://github.com/onomyprotocol/onomy/pull/579) Bump SDK version to [v0.41.0](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.41.0).
 
 ## [v3.0.1] - 2021-01-19
 
 ### Improvements
 
-* (protobuf) [\#553](https://github.com/cosmos/gaia/pull/553) Bump gogo protobuf deps to v1.3.3
-* (github) [\#543](https://github.com/cosmos/gaia/pull/543) Add docker deployment
-* (starport) [\#535](https://github.com/cosmos/gaia/pull/535) Add config.yml
-* (docker) [\#534](https://github.com/cosmos/gaia/pull/534) Update to python3
+* (protobuf) [\#553](https://github.com/onomyprotocol/onomy/pull/553) Bump gogo protobuf deps to v1.3.3
+* (github) [\#543](https://github.com/onomyprotocol/onomy/pull/543) Add docker deployment
+* (starport) [\#535](https://github.com/onomyprotocol/onomy/pull/535) Add config.yml
+* (docker) [\#534](https://github.com/onomyprotocol/onomy/pull/534) Update to python3
 
 ### Bug Fixes
 
 * (sdk) Bump SDK version to [v0.40.1](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.40.1).
 * (tendermint) Bump Tendermint version to [v0.34.3](https://github.com/tendermint/tendermint/releases/tag/v0.34.3).
-* (github) [\#544](https://github.com/cosmos/gaia/pull/544) Deploy from main not master
-* (docs) [\#550](https://github.com/cosmos/gaia/pull/550) Bump vuepress-theme-cosmos to 1.0.180
-* (docker) [\#537](https://github.com/cosmos/gaia/pull/537) Fix single-node.sh setup script
+* (github) [\#544](https://github.com/onomyprotocol/onomy/pull/544) Deploy from main not master
+* (docs) [\#550](https://github.com/onomyprotocol/onomy/pull/550) Bump vuepress-theme-cosmos to 1.0.180
+* (docker) [\#537](https://github.com/onomyprotocol/onomy/pull/537) Fix single-node.sh setup script
 
 ## [v3.0.0] - 2021-01-09
 
@@ -418,11 +418,11 @@ See the [Tendermint v0.34.7 SDK changelog](https://github.com/tendermint/tenderm
 
 ### Features
 
-* (gaiad) [\#119](https://github.com/cosmos/gaia/pull/119) Add support for the `--halt-time` CLI flag and configuration.
+* (gaiad) [\#119](https://github.com/onomyprotocol/onomy/pull/119) Add support for the `--halt-time` CLI flag and configuration.
 
 ### Improvements
 
-* [\#119](https://github.com/cosmos/gaia/pull/119) Refactor and upgrade Circle CI
+* [\#119](https://github.com/onomyprotocol/onomy/pull/119) Refactor and upgrade Circle CI
   configuration.
 * (sdk) Update SDK version to v0.37.1
 
@@ -430,7 +430,7 @@ See the [Tendermint v0.34.7 SDK changelog](https://github.com/tendermint/tenderm
 
 ### Bug Fixes
 
-* [\#104](https://github.com/cosmos/gaia/issues/104) Fix `ModuleAccountAddrs` to
+* [\#104](https://github.com/onomyprotocol/onomy/issues/104) Fix `ModuleAccountAddrs` to
   not rely on the `x/supply` keeper to get module account addresses for blacklisting.
 
 ### Breaking Changes
@@ -494,63 +494,63 @@ See the [Tendermint v0.34.7 SDK changelog](https://github.com/tendermint/tenderm
 
 <!-- Release links -->
 
-[v10.0.1]: https://github.com/cosmos/gaia/releases/tag/v10.0.1
-[v10.0.0]: https://github.com/cosmos/gaia/releases/tag/v10.0.0
-[v9.1.1]: https://github.com/cosmos/gaia/releases/tag/v9.1.1
-[v9.1.0]: https://github.com/cosmos/gaia/releases/tag/v9.1.0
-[v9.0.3]: https://github.com/cosmos/gaia/releases/tag/v9.0.3
-[v9.0.2]: https://github.com/cosmos/gaia/releases/tag/v9.0.2
-[v9.0.1]: https://github.com/cosmos/gaia/releases/tag/v9.0.1
-[v9.0.0]: https://github.com/cosmos/gaia/releases/tag/v9.0.0
-[v8.0.1]: https://github.com/cosmos/gaia/releases/tag/v8.0.1
-[v8.0.0]: https://github.com/cosmos/gaia/releases/tag/v8.0.0
-[v7.1.1]: https://github.com/cosmos/gaia/releases/tag/v7.1.1
-[v7.1.0]: https://github.com/cosmos/gaia/releases/tag/v7.1.0
-[v7.0.3]: https://github.com/cosmos/gaia/releases/tag/v7.0.3
-[v7.0.2]: https://github.com/cosmos/gaia/releases/tag/v7.0.2
-[v7.0.1]: https://github.com/cosmos/gaia/releases/tag/v7.0.1
-[v7.0.0]: https://github.com/cosmos/gaia/releases/tag/v7.0.0
-[v6.0.4]: https://github.com/cosmos/gaia/releases/tag/v6.0.4
-[v6.0.3]: https://github.com/cosmos/gaia/releases/tag/v6.0.3
-[v6.0.2]: https://github.com/cosmos/gaia/releases/tag/v6.0.2
-[v6.0.1]: https://github.com/cosmos/gaia/releases/tag/v6.0.1
-[v6.0.0]: https://github.com/cosmos/gaia/releases/tag/v6.0.0
-[v5.0.8]: https://github.com/cosmos/gaia/releases/tag/v5.0.8
-[v5.0.7]: https://github.com/cosmos/gaia/releases/tag/v5.0.7
-[v5.0.6]: https://github.com/cosmos/gaia/releases/tag/v5.0.6
-[v5.0.5]: https://github.com/cosmos/gaia/releases/tag/v5.0.5
-[v5.0.4]: https://github.com/cosmos/gaia/releases/tag/v5.0.4
-[v5.0.3]: https://github.com/cosmos/gaia/releases/tag/v5.0.3
-[v5.0.2]: https://github.com/cosmos/gaia/releases/tag/v5.0.2
-[v5.0.1]: https://github.com/cosmos/gaia/releases/tag/v5.0.1
-[v5.0.0]: https://github.com/cosmos/gaia/releases/tag/v5.0.0
-[v4.2.1]: https://github.com/cosmos/gaia/releases/tag/v4.2.1
-[v4.2.0]: https://github.com/cosmos/gaia/releases/tag/v4.2.0
-[v4.1.2]: https://github.com/cosmos/gaia/releases/tag/v4.1.2
-[v4.1.1]: https://github.com/cosmos/gaia/releases/tag/v4.1.1
-[v4.1.0]: https://github.com/cosmos/gaia/releases/tag/v4.1.0
-[v4.0.6]: https://github.com/cosmos/gaia/releases/tag/v4.0.6
-[v4.0.5]: https://github.com/cosmos/gaia/releases/tag/v4.0.5
-[v4.0.4]: https://github.com/cosmos/gaia/releases/tag/v4.0.4
-[v4.0.3]: https://github.com/cosmos/gaia/releases/tag/v4.0.3
-[v4.0.2]: https://github.com/cosmos/gaia/releases/tag/v4.0.2
-[v4.0.1]: https://github.com/cosmos/gaia/releases/tag/v4.0.1
-[v4.0.0]: https://github.com/cosmos/gaia/releases/tag/v4.0.0
-[v3.0.1]: https://github.com/cosmos/gaia/releases/tag/v3.0.1
-[v3.0.0]: https://github.com/cosmos/gaia/releases/tag/v3.0.0
-[v2.0.14]: https://github.com/cosmos/gaia/releases/tag/v2.0.14
-[v2.0.13]: https://github.com/cosmos/gaia/releases/tag/v2.0.13
-[v2.0.12]: https://github.com/cosmos/gaia/releases/tag/v2.0.12
-[v2.0.11]: https://github.com/cosmos/gaia/releases/tag/v2.0.11
-[v2.0.10]: https://github.com/cosmos/gaia/releases/tag/v2.0.10
-[v2.0.9]: https://github.com/cosmos/gaia/releases/tag/v2.0.9
-[v2.0.8]: https://github.com/cosmos/gaia/releases/tag/v2.0.8
-[v2.0.7]: https://github.com/cosmos/gaia/releases/tag/v2.0.7
-[v2.0.6]: https://github.com/cosmos/gaia/releases/tag/v2.0.6
-[v2.0.5]: https://github.com/cosmos/gaia/releases/tag/v2.0.5
-[v2.0.4]: https://github.com/cosmos/gaia/releases/tag/v2.0.4
-[v2.0.3]: https://github.com/cosmos/gaia/releases/tag/v2.0.3
-[v2.0.2]: https://github.com/cosmos/gaia/releases/tag/v2.0.2
-[v2.0.1]: https://github.com/cosmos/gaia/releases/tag/v2.0.1
-[v2.0.0]: https://github.com/cosmos/gaia/releases/tag/v2.0.0
-[v1.0.0]: https://github.com/cosmos/gaia/releases/tag/v1.0.0
+[v10.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v10.0.1
+[v10.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v10.0.0
+[v9.1.1]: https://github.com/onomyprotocol/onomy/releases/tag/v9.1.1
+[v9.1.0]: https://github.com/onomyprotocol/onomy/releases/tag/v9.1.0
+[v9.0.3]: https://github.com/onomyprotocol/onomy/releases/tag/v9.0.3
+[v9.0.2]: https://github.com/onomyprotocol/onomy/releases/tag/v9.0.2
+[v9.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v9.0.1
+[v9.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v9.0.0
+[v8.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v8.0.1
+[v8.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v8.0.0
+[v7.1.1]: https://github.com/onomyprotocol/onomy/releases/tag/v7.1.1
+[v7.1.0]: https://github.com/onomyprotocol/onomy/releases/tag/v7.1.0
+[v7.0.3]: https://github.com/onomyprotocol/onomy/releases/tag/v7.0.3
+[v7.0.2]: https://github.com/onomyprotocol/onomy/releases/tag/v7.0.2
+[v7.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v7.0.1
+[v7.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v7.0.0
+[v6.0.4]: https://github.com/onomyprotocol/onomy/releases/tag/v6.0.4
+[v6.0.3]: https://github.com/onomyprotocol/onomy/releases/tag/v6.0.3
+[v6.0.2]: https://github.com/onomyprotocol/onomy/releases/tag/v6.0.2
+[v6.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v6.0.1
+[v6.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v6.0.0
+[v5.0.8]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.8
+[v5.0.7]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.7
+[v5.0.6]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.6
+[v5.0.5]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.5
+[v5.0.4]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.4
+[v5.0.3]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.3
+[v5.0.2]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.2
+[v5.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.1
+[v5.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v5.0.0
+[v4.2.1]: https://github.com/onomyprotocol/onomy/releases/tag/v4.2.1
+[v4.2.0]: https://github.com/onomyprotocol/onomy/releases/tag/v4.2.0
+[v4.1.2]: https://github.com/onomyprotocol/onomy/releases/tag/v4.1.2
+[v4.1.1]: https://github.com/onomyprotocol/onomy/releases/tag/v4.1.1
+[v4.1.0]: https://github.com/onomyprotocol/onomy/releases/tag/v4.1.0
+[v4.0.6]: https://github.com/onomyprotocol/onomy/releases/tag/v4.0.6
+[v4.0.5]: https://github.com/onomyprotocol/onomy/releases/tag/v4.0.5
+[v4.0.4]: https://github.com/onomyprotocol/onomy/releases/tag/v4.0.4
+[v4.0.3]: https://github.com/onomyprotocol/onomy/releases/tag/v4.0.3
+[v4.0.2]: https://github.com/onomyprotocol/onomy/releases/tag/v4.0.2
+[v4.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v4.0.1
+[v4.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v4.0.0
+[v3.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v3.0.1
+[v3.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v3.0.0
+[v2.0.14]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.14
+[v2.0.13]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.13
+[v2.0.12]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.12
+[v2.0.11]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.11
+[v2.0.10]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.10
+[v2.0.9]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.9
+[v2.0.8]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.8
+[v2.0.7]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.7
+[v2.0.6]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.6
+[v2.0.5]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.5
+[v2.0.4]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.4
+[v2.0.3]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.3
+[v2.0.2]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.2
+[v2.0.1]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.1
+[v2.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v2.0.0
+[v1.0.0]: https://github.com/onomyprotocol/onomy/releases/tag/v1.0.0

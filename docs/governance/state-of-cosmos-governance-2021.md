@@ -43,7 +43,7 @@ Governance practices and decisions are communicated through different types of d
   - Interchain Standard ([ICS](https://github.com/cosmos/ibc))
   - [RFCs](https://github.com/tendermint/spec/blob/master/rfc/README.md)
 - [Opinion pieces](https://blog.cosmos.network/the-cosmos-hub-is-a-port-city-5b7f2d28debf)
-- [Light papers](https://github.com/cosmos/gaia/issues/659)
+- [Light papers](https://github.com/onomyprotocol/onomy/issues/659)
 
 ### Decision-making and Discussion Venues
 
@@ -77,7 +77,7 @@ Venues involve community members to different degrees and individuals often perf
   - For discussing meta aspects of governance processes, discussion and development of specific off-chain design records and technical specs, and repository for on-chain proposals
   - The Cosmos governance repo is officially deprecated as of October 2021.
 - **Bi-weekly Cosmos Gaia / ATOM sync call**
-  - For cross-team discussion on the [Gaia roadmap](https://github.com/cosmos/gaia/projects/9)
+  - For cross-team discussion on the [Gaia roadmap](https://github.com/onomyprotocol/onomy/projects/9)
 - (Informal) **Google Docs for early feedback**
   - For individuals and collaborators to develop and iterative on governance ideas before proposing them formally
 - **[Matrix chat](https://riot.im/app/#/room/#cosmos_validators:matrix.org)** (deprecated)
@@ -353,7 +353,7 @@ This report provides a descriptive account of the existing governance documentat
 
 - More clarity is needed on when the CIPs should be used. It could be seen as the canonical home for high level decisions where alignment is required across the ecosystem but needs to be presented as such and the process needs refinement
 - Some CIPS clearly impact all Cosmos ecosystem and blockchains and need ecosystem-wide buy-in, for example [CIP-11: Cosmos Hierarchical Deterministic key derivation](https://github.com/cosmos/cips/pull/11).
-- ["RFC Interchain Staking Light Paper"](https://github.com/cosmos/gaia/issues/659) an example of a potential CIP that was PRd to the Gaia repo. The ambiguity makes sense: it fits criteria of informational CIP about the Cosmos environment (Light Paper), but also a shorter and higher level document is needed to function as more of a summary in order to get early user feedback and market ideas that isn't a CIP <https://github.com/cosmos/gaia/issues/659>
+- ["RFC Interchain Staking Light Paper"](https://github.com/onomyprotocol/onomy/issues/659) an example of a potential CIP that was PRd to the Gaia repo. The ambiguity makes sense: it fits criteria of informational CIP about the Cosmos environment (Light Paper), but also a shorter and higher level document is needed to function as more of a summary in order to get early user feedback and market ideas that isn't a CIP <https://github.com/onomyprotocol/onomy/issues/659>
 - The terms "Cosmos" and "Cosmos Hub" are used interchangeably in the CIPs repository, so the intended audience could be made more clear. The [module readiness process and checklist](https://github.com/cosmos/cips/pull/6/files), which proposes a process for modules to be adopted by the Gaia team, suggests that the process is intended for teams involved in development related to the Cosmos Hub.
 - Tendermint has an [ADR process](https://github.com/tendermint/tendermint/tree/master/docs/architecture) as well. Documentation around the relationship between the Tendermint ADR and the RFC processes would be valuable.
 

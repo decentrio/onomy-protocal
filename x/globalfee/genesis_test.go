@@ -16,8 +16,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
 
-	gaiaparams "github.com/cosmos/gaia/v15/app/params"
-	"github.com/cosmos/gaia/v15/x/globalfee/types"
+	gaiaparams "github.com/onomyprotocol/onomy/v15/app/params"
+	"github.com/onomyprotocol/onomy/v15/x/globalfee/types"
 )
 
 func TestDefaultGenesis(t *testing.T) {

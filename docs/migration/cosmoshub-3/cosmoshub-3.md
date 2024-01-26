@@ -67,7 +67,7 @@ If you’re running a block explorer, wallet, exchange, validator, or any other 
 
 If you want to test the procedure before the update happens on 18th of February, please see this post accordingly:
 
-<https://github.com/cosmos/gaia/issues/569#issuecomment-767910963>
+<https://github.com/onomyprotocol/onomy/issues/569#issuecomment-767910963>
 
 ## Preliminary
 
@@ -81,7 +81,7 @@ the [Interchain Standads](https://github.com/cosmos/ics#ibc-quick-references) wi
 This upgrade comes with several improvements in efficiency, node synchronization and following blockchain upgrades.
 More details on the [Stargate Website](https://stargate.cosmos.network/).
 
-__[Gaia](https://github.com/cosmos/gaia) application v4.0.2 is
+__[Gaia](https://github.com/onomyprotocol/onomy) application v4.0.2 is
 what full node operators will upgrade to and run in this next major upgrade__.
 Following Cosmos SDK version v0.41.2 and Tendermint v0.34.7.
 
@@ -194,13 +194,13 @@ The version/commit hash of Gaia v2.0.15: `89cf7e6fc166eaabf47ad2755c443d455feda0
    ```
 
 1. At this point you now have a valid exported genesis state! All further steps now require
-v4.0.2 of [Gaia](https://github.com/cosmos/gaia).
+v4.0.2 of [Gaia](https://github.com/onomyprotocol/onomy).
 Cross check your genesis hash with other peers (other validators) in the chat rooms.
 
    __NOTE__: Go [1.15+](https://golang.org/dl/) is required!
 
    ```bash
-   git clone https://github.com/cosmos/gaia.git && cd gaia && git checkout v4.0.2; make install
+   git clone https://github.com/onomyprotocol/onomy.git && cd gaia && git checkout v4.0.2; make install
    ```
 
 1. Verify you are currently running the correct version (v4.0.2) of the _Gaia_:
@@ -293,12 +293,12 @@ Cross check your genesis hash with other peers (other validators) in the chat ro
    The cosmoshub-4 genesis file will be validated by community participants, and
    the hash of the file will be shared on the #validators-verified channel of the [Cosmos Discord](https://discord.gg/cosmosnetwork).
 
-1. Install v4.0.2 of [Gaia](https://github.com/cosmos/gaia).
+1. Install v4.0.2 of [Gaia](https://github.com/onomyprotocol/onomy).
 
    __NOTE__: Go [1.15+](https://golang.org/dl/) is required!
 
    ```bash
-   git clone https://github.com/cosmos/gaia.git && cd gaia && git checkout v4.0.2; make install
+   git clone https://github.com/onomyprotocol/onomy.git && cd gaia && git checkout v4.0.2; make install
    ```
 
 1. Verify you are currently running the correct version (v4.0.2) of the _Gaia_:

@@ -9,7 +9,7 @@ import (
 	govkeeper "github.com/cosmos/cosmos-sdk/x/gov/keeper"
 	govv1beta1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 
-	gaiaerrors "github.com/cosmos/gaia/v15/types/errors"
+	gaiaerrors "github.com/onomyprotocol/onomy/v15/types/errors"
 )
 
 // initial deposit must be greater than or equal to 10% of the minimum deposit

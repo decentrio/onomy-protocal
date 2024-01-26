@@ -60,17 +60,17 @@ export PATH=$PATH:$(go env GOPATH)/bin
 ## Install the binaries
 
 Next, let's install the latest version of Gaia. Make sure you `git checkout` the
-correct [released version](https://github.com/cosmos/gaia/releases).
+correct [released version](https://github.com/onomyprotocol/onomy/releases).
 
 ```bash
-git clone -b <latest-release-tag> https://github.com/cosmos/gaia.git
+git clone -b <latest-release-tag> https://github.com/onomyprotocol/onomy.git
 cd gaia && make install
 ```
 
 If this command fails due to the following error message, you might have already set `LDFLAGS` prior to running this step.
 
 ```
-# github.com/cosmos/gaia/cmd/gaiad
+# github.com/onomyprotocol/onomy/cmd/gaiad
 flag provided but not defined: -L
 usage: link [options] main.o
 ...

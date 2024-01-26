@@ -8,13 +8,13 @@ import (
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	"github.com/cosmos/gaia/v15/app/keepers"
+	"github.com/onomyprotocol/onomy/v15/app/keepers"
 )
 
 // CreateUpgradeHandler returns a upgrade handler for Gaia v15
 // which executes the following migrations:
 //   - update the slashing module SigningInfos for which the consensus address is empty,
-//     see https://github.com/cosmos/gaia/issues/1734.
+//     see https://github.com/onomyprotocol/onomy/issues/1734.
 func CreateUpgradeHandler(
 	mm *module.Manager,
 	configurator module.Configurator,

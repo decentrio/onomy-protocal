@@ -5,7 +5,7 @@ title: Introduction
 
 ::: warning
 ### **v14 Upgrade**
-Cosmos Hub will be upgraded to [v14.1](https://github.com/cosmos/gaia/releases/tag/v14.1.0) at block height: **[18,262,000](https://www.mintscan.io/cosmos/blocks/18262000)**
+Cosmos Hub will be upgraded to [v14.1](https://github.com/onomyprotocol/onomy/releases/tag/v14.1.0) at block height: **[18,262,000](https://www.mintscan.io/cosmos/blocks/18262000)**
 
 To upgrade from v13 check the [**upgrade guide**](../migration/cosmoshub-4-v14-upgrade.md)
 :::

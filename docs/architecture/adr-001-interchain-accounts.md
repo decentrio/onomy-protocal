@@ -68,7 +68,7 @@ There are future releases of Interchain Accounts which are expected to be backwa
 ## Project Integrations [optional]
 
 - Gaia Integrations
-  - [PR](https://github.com/cosmos/gaia/pull/1150)
+  - [PR](https://github.com/onomyprotocol/onomy/pull/1150)
 - Integration Partner
   - IBC Team
 

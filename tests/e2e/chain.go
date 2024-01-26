@@ -22,7 +22,7 @@ import (
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	gaiaparams "github.com/cosmos/gaia/v15/app/params"
+	gaiaparams "github.com/onomyprotocol/onomy/v15/app/params"
 )
 
 const (

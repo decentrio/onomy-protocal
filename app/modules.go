@@ -55,8 +55,8 @@ import (
 	upgradeclient "github.com/cosmos/cosmos-sdk/x/upgrade/client"
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 
-	gaiaappparams "github.com/cosmos/gaia/v15/app/params"
-	"github.com/cosmos/gaia/v15/x/globalfee"
+	gaiaappparams "github.com/onomyprotocol/onomy/v15/app/params"
+	"github.com/onomyprotocol/onomy/v15/x/globalfee"
 )
 
 var maccPerms = map[string][]string{
@@ -294,7 +294,7 @@ func orderInitBlockers() []string {
 		// if the globalfee in genesis is not changed.)
 		// To resolve this issue, we should initialize the globalfee module after genutil, ensuring that the global
 		// min fee is empty when gentx is called.
-		// For more details, please refer to the following link: https://github.com/cosmos/gaia/issues/2489
+		// For more details, please refer to the following link: https://github.com/onomyprotocol/onomy/issues/2489
 		globalfee.ModuleName,
 		providertypes.ModuleName,
 		consensusparamtypes.ModuleName,

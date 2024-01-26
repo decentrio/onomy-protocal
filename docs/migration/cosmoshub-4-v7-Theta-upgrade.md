@@ -5,7 +5,7 @@ order: 3
 <!-- markdown-link-check-disable -->
 # Cosmos Hub 4, v7-Theta Upgrade, Instructions
 
-This document describes the steps for validator and full node operators for the successful execution of the [v7-Theta Upgrade](https://github.com/cosmos/gaia/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md#v7-theta-upgrade-expected-q1-2022), which contains the following main new features/improvement:
+This document describes the steps for validator and full node operators for the successful execution of the [v7-Theta Upgrade](https://github.com/onomyprotocol/onomy/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md#v7-theta-upgrade-expected-q1-2022), which contains the following main new features/improvement:
 
 - [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) to [v0.45.1](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.1). See [CHANGELOG.md](https://github.com/cosmos/cosmos-sdk/blob/v0.45.1/CHANGELOG.md#v0451---2022-02-03) for details.
 - [ibc-go](https://github.com/cosmos/ibc-go) module to [v3.0.0](https://github.com/cosmos/ibc-go/releases/tag/v3.0.0). See [CHANGELOG.md](https://github.com/cosmos/ibc-go/blob/v3.0.0/CHANGELOG.md#v300---2022-03-15) for details.
@@ -81,11 +81,11 @@ For those validator and full node operators that are interested in ensuring prep
 
 ### Current runtime, cosmoshub-4 (pre-v7-Theta upgrade) is running Gaia v6.0.x
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v6.0.4](https://github.com/cosmos/gaia/releases/v6.0.4). We anticipate that operators who are running on v6.0.x, will be able to upgrade successfully; however, this is untested and it is up to operators to ensure that their systems are capable of performing the upgrade.
+The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v6.0.4](https://github.com/onomyprotocol/onomy/releases/v6.0.4). We anticipate that operators who are running on v6.0.x, will be able to upgrade successfully; however, this is untested and it is up to operators to ensure that their systems are capable of performing the upgrade.
 
 ### Target runtime, cosmoshub-4 (post-v7-Theta upgrade) will run Gaia v7.0.0
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v7.0.0](https://github.com/cosmos/gaia/releases/tag/v7.0.0). Operators _MUST_ use this version post-upgrade to remain connected to the network.
+The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v7.0.0](https://github.com/onomyprotocol/onomy/releases/tag/v7.0.0). Operators _MUST_ use this version post-upgrade to remain connected to the network.
 
 ## v7-Theta upgrade steps
 

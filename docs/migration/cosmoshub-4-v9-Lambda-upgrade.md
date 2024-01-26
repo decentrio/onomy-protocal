@@ -5,15 +5,15 @@ order: 5
 <!-- markdown-link-check-disable -->
 # Cosmos Hub 4, v9-Lambda Upgrade, Instructions
 
-This document describes the steps for validator and full node operators for the successful execution of the [v9-Lambda Upgrade](https://github.com/cosmos/gaia/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md#v9-lambda-upgrade-expected-q1-2023), which contains the following main new features/improvement:
+This document describes the steps for validator and full node operators for the successful execution of the [v9-Lambda Upgrade](https://github.com/onomyprotocol/onomy/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md#v9-lambda-upgrade-expected-q1-2023), which contains the following main new features/improvement:
 
 - [Interchain-Security](https://github.com/cosmos/interchain-security) [v1.0.0](https://github.com/cosmos/interchain-security/releases/tag/v1.0.0) provider module. See the [ICS Spec](https://github.com/cosmos/ibc/blob/main/spec/app/ics-028-cross-chain-validation/README.md) for more details.
 - [cosmos-sdk](https://github.com/cosmos/cosmos-sdk) to [v0.45.13-ics](https://github.com/cosmos/cosmos-sdk/releases/tag/v0.45.13-ics). See [CHANGELOG.md](https://github.com/cosmos/cosmos-sdk/blob/releases/tag/v0.45.13-ics) for details.
 - [ibc-go](https://github.com/cosmos/ibc-go) to [v4.2.0](https://github.com/cosmos/ibc-go/blob/release/v4.2.x/CHANGELOG.md). See [v4.2 Release Notes](https://github.com/cosmos/ibc-go/releases/tag/v4.2.0) for details.
 - [tendermint](https://github.com/informalsystems/tendermint) to [0.34.26](https://github.com/informalsystems/tendermint/tree/v0.34.26). See [CHANGELOG.md](https://github.com/informalsystems/tendermint/blob/v0.34.26/CHANGELOG.md#v03426) for details.
 - [packet-forward-middleware](https://github.com/strangelove-ventures/packet-forward-middleware) to [v4.0.4](https://github.com/strangelove-ventures/packet-forward-middleware/releases/tag/v4.0.4).
-- [E2E ccv tests](https://github.com/cosmos/gaia/blob/main/tests/e2e/e2e_gov_test.go#L138). Tests covering new functionality introduced by the provider module to add and remove a consumer chain via governance proposal.
-- [integration ccv tests](https://github.com/cosmos/gaia/blob/main/tests/ics/interchain_security_test.go). Imports Interchain-Security's `TestCCVTestSuite` and implements Gaia as the provider chain.
+- [E2E ccv tests](https://github.com/onomyprotocol/onomy/blob/main/tests/e2e/e2e_gov_test.go#L138). Tests covering new functionality introduced by the provider module to add and remove a consumer chain via governance proposal.
+- [integration ccv tests](https://github.com/onomyprotocol/onomy/blob/main/tests/ics/interchain_security_test.go). Imports Interchain-Security's `TestCCVTestSuite` and implements Gaia as the provider chain.
 
 TOC:
 
@@ -83,11 +83,11 @@ For those validator and full node operators that are interested in ensuring prep
 
 ### Current runtime, cosmoshub-4 (pre-v9-Lambda upgrade) is running Gaia v8.0.1
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v8.0.1](https://github.com/cosmos/gaia/releases/v8.0.1). We anticipate that operators who are running on v8.0.1, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.18`.
+The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v8.0.1](https://github.com/onomyprotocol/onomy/releases/v8.0.1). We anticipate that operators who are running on v8.0.1, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.18`.
 
 ### Target runtime, cosmoshub-4 (post-v9-Lambda upgrade) will run Gaia v9.0.0
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v9.0.0](https://github.com/cosmos/gaia/releases/tag/v9.0.0). Operators _MUST_ use this version post-upgrade to remain connected to the network.
+The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v9.0.0](https://github.com/onomyprotocol/onomy/releases/tag/v9.0.0). Operators _MUST_ use this version post-upgrade to remain connected to the network.
 
 ## v9-Lambda upgrade steps
 
@@ -102,7 +102,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ### Method I: Manual Upgrade
 
-Make sure Gaia v9.0.0 is installed by either downloading a [compatable binary](https://github.com/cosmos/gaia/releases/tag/v9.0.0), or building from source. Building from source requires go 1.18.
+Make sure Gaia v9.0.0 is installed by either downloading a [compatable binary](https://github.com/onomyprotocol/onomy/releases/tag/v9.0.0), or building from source. Building from source requires go 1.18.
 
 Run Gaia v8.0.1 till upgrade height, the node will panic:
 

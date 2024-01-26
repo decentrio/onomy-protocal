@@ -6,7 +6,7 @@ order: 8
 # Cosmos Hub 4, Gaia v12 Upgrade, Instructions
 
 This document describes the steps for validators and full node operators, to upgrade successfully to the Gaia v12 release.
-For more details on the release, please see the [release notes](https://github.com/cosmos/gaia/releases/tag/v12.0.0)
+For more details on the release, please see the [release notes](https://github.com/onomyprotocol/onomy/releases/tag/v12.0.0)
 
 ## Instructions
   
@@ -43,7 +43,7 @@ For more details on the release, please see the [release notes](https://github.c
 
 ## Liquid Staking
 
-Validators please be aware that this release will include a new liquid staking module which has been included via the Cosmos SDK. Please see the [release notes](https://github.com/cosmos/gaia/releases/tag/v12.0.0) for v12 for more information about this module. 
+Validators please be aware that this release will include a new liquid staking module which has been included via the Cosmos SDK. Please see the [release notes](https://github.com/onomyprotocol/onomy/releases/tag/v12.0.0) for v12 for more information about this module. 
 
 **IMPORTANT:** Inclusion of this module requires validators to set a validation-bond to be eligiable for Liquid Staked delegations. Please see the [Validator FAQ](../validators/validator-faq.html#liquid-staking-module) for more information.
 
@@ -84,11 +84,11 @@ For those validator and full node operators that are interested in ensuring prep
 
 ### Current runtime
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v11.0.0](https://github.com/cosmos/gaia/releases/v11.0.0). We anticipate that operators who are running on v11.0.x, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
+The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v11.0.0](https://github.com/onomyprotocol/onomy/releases/v11.0.0). We anticipate that operators who are running on v11.0.x, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
 
 ### Target runtime
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v12.0.0](https://github.com/cosmos/gaia/releases/tag/v12.0.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v12.0.0](https://github.com/onomyprotocol/onomy/releases/tag/v12.0.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -103,7 +103,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ### Method I: Manual Upgrade
 
-Make sure Gaia v12.0.0 is installed by either downloading a [compatible binary](https://github.com/cosmos/gaia/releases/tag/v12.0.0), or building from source. Building from source requires **Golang 1.20**.
+Make sure Gaia v12.0.0 is installed by either downloading a [compatible binary](https://github.com/onomyprotocol/onomy/releases/tag/v12.0.0), or building from source. Building from source requires **Golang 1.20**.
 
 Run Gaia v11.0.0 till upgrade height, the node will panic:
 

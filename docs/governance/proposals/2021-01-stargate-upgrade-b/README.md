@@ -26,7 +26,7 @@ After the success of the community approval of the first Stargate Upgrade propos
 
 Bugs were found in prior upgrade release that triggered the abort procedure that was detailed in the standard upgrade.
 
-* Bugs have been identified in the Proposal 29 implementation.  They are resolved in this pull request[Additional review of prop 29 and migration testing by zmanian · Pull Request #559 · cosmos/gaia · GitHub](https://github.com/cosmos/gaia/pull/559)
+* Bugs have been identified in the Proposal 29 implementation.  They are resolved in this pull request[Additional review of prop 29 and migration testing by zmanian · Pull Request #559 · onomyprotocol/onomy · GitHub](https://github.com/onomyprotocol/onomy/pull/559)
 * A balance validation regression was identified during Prop 29 code review. [x/bank: balance and metadata validation by fedekunze · Pull Request #8417 · cosmos/cosmos-sdk · GitHub](https://github.com/cosmos/cosmos-sdk/pull/8417)
 
 ## The Stargate Plan
@@ -88,14 +88,14 @@ Cosmos Stargate integration success with exchanges and wallet providers reflects
 
 ## Prop 29
 
-This upgrade also implements the fund recovery procedure defined in proposal 29. The code is [here](https://github.com/cosmos/gaia/blob/main/app/prop29.go). As requested during the discussion of the governance proposal, the migration and fund recovery procedure verifies all signatures. This code was tested during the cosmoshub-3 simulated upgrade testnet.
+This upgrade also implements the fund recovery procedure defined in proposal 29. The code is [here](https://github.com/onomyprotocol/onomy/blob/main/app/prop29.go). As requested during the discussion of the governance proposal, the migration and fund recovery procedure verifies all signatures. This code was tested during the cosmoshub-3 simulated upgrade testnet.
 
 ## Stargate Upgrade Steps
 
 ------------
 The upgrade steps for the simulated upgrade of the current Cosmoshub mainnet to Cosmos Stargate includes the following steps:
 
-The upgrade instructions will continue to improve as a living [document](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-3.md). The Gaia maintainers will continue to improve the instruction below.
+The upgrade instructions will continue to improve as a living [document](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-3.md). The Gaia maintainers will continue to improve the instruction below.
 
 This section is with the current `gaia 2.0.*` implementation.
 

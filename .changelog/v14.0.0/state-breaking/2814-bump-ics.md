@@ -1,1 +1,1 @@
-- Bump [ICS] to [v2.3.0-provider-lsm](https://github.com/cosmos/interchain-security/releases/tag/v2.3.0-provider-lsm) ([\#2814](https://github.com/cosmos/gaia/pull/2814))
+- Bump [ICS] to [v2.3.0-provider-lsm](https://github.com/cosmos/interchain-security/releases/tag/v2.3.0-provider-lsm) ([\#2814](https://github.com/onomyprotocol/onomy/pull/2814))

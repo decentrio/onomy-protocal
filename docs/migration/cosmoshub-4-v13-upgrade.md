@@ -6,7 +6,7 @@ order: 8
 # Cosmos Hub 4, Gaia v13 Upgrade, Instructions
 
 This document describes the steps for validators and full node operators, to upgrade successfully to the Gaia v13 release.
-For more details on the release, please see the [release notes](https://github.com/cosmos/gaia/releases/tag/v13.0.0)
+For more details on the release, please see the [release notes](https://github.com/onomyprotocol/onomy/releases/tag/v13.0.0)
 
 ## Instructions
   
@@ -77,11 +77,11 @@ For those validator and full node operators that are interested in ensuring prep
 
 ### Current runtime
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v12.0.0](https://github.com/cosmos/gaia/releases/v12.0.0). We anticipate that operators who are running on v11.0.x, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
+The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v12.0.0](https://github.com/onomyprotocol/onomy/releases/v12.0.0). We anticipate that operators who are running on v11.0.x, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
 
 ### Target runtime
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v13.0.0](https://github.com/cosmos/gaia/releases/tag/v13.0.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v13.0.0](https://github.com/onomyprotocol/onomy/releases/tag/v13.0.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -96,7 +96,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ### Method I: Manual Upgrade
 
-Make sure Gaia v13.0.0 is installed by either downloading a [compatible binary](https://github.com/cosmos/gaia/releases/tag/v13.0.0), or building from source. Building from source requires **Golang 1.20.x**.
+Make sure Gaia v13.0.0 is installed by either downloading a [compatible binary](https://github.com/onomyprotocol/onomy/releases/tag/v13.0.0), or building from source. Building from source requires **Golang 1.20.x**.
 
 Run Gaia v12.0.0 till upgrade height, the node will panic:
 

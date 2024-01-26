@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	addressutil "github.com/cosmos/gaia/v15/pkg/address"
+	addressutil "github.com/onomyprotocol/onomy/v15/pkg/address"
 )
 
 var flagBech32Prefix = "prefix"

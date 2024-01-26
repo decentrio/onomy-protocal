@@ -12,9 +12,9 @@ import (
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 
-	gaiaerrors "github.com/cosmos/gaia/v15/types/errors"
-	"github.com/cosmos/gaia/v15/x/globalfee"
-	"github.com/cosmos/gaia/v15/x/globalfee/types"
+	gaiaerrors "github.com/onomyprotocol/onomy/v15/types/errors"
+	"github.com/onomyprotocol/onomy/v15/x/globalfee"
+	"github.com/onomyprotocol/onomy/v15/x/globalfee/types"
 )
 
 // FeeWithBypassDecorator checks if the transaction's fee is at least as large

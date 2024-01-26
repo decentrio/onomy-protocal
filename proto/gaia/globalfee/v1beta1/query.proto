@@ -5,7 +5,7 @@ import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 import "gaia/globalfee/v1beta1/genesis.proto";
 
-option go_package = "github.com/cosmos/gaia/x/globalfee/types";
+option go_package = "github.com/onomyprotocol/onomy/x/globalfee/types";
 
 // Query defines the gRPC querier service.
 service Query {

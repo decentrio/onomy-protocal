@@ -5,7 +5,7 @@ order: 2
 <!-- markdown-link-check-disable -->
 # Cosmos Hub 4, Vega Upgrade, Instructions
 
-This document describes the steps for validator and full node operators for the successful execution of the [Vega Upgrade](https://github.com/cosmos/gaia/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md#vega-upgrade-expected-q4-2021), which contains the following main new features:
+This document describes the steps for validator and full node operators for the successful execution of the [Vega Upgrade](https://github.com/onomyprotocol/onomy/blob/main/docs/roadmap/cosmos-hub-roadmap-2.0.md#vega-upgrade-expected-q4-2021), which contains the following main new features:
 
 - [authz](https://github.com/cosmos/cosmos-sdk/tree/v0.44.3/x/authz/spec) and [feegrant modules](https://github.com/cosmos/cosmos-sdk/tree/v0.44.3/x/feegrant/spec)
 - [packet-forward-middleware](https://github.com/strangelove-ventures/packet-forward-middleware)
@@ -73,11 +73,11 @@ For those validator and full node operators that are interested in ensuring prep
 
 ### Current runtime, cosmoshub-4 (pre-Vega upgrade) is running Gaia v5.0.0
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v5.0.0](https://github.com/cosmos/gaia/releases/tag/v5.0.0). We anticipate that operators who are running on v5.0.x, will be able to upgrade successfully; however, this is untested and it is up to operators to ensure that their systems are capable of performing the upgrade.
+The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v5.0.0](https://github.com/onomyprotocol/onomy/releases/tag/v5.0.0). We anticipate that operators who are running on v5.0.x, will be able to upgrade successfully; however, this is untested and it is up to operators to ensure that their systems are capable of performing the upgrade.
 
 ### Target runtime, cosmoshub-4 (post-Vega upgrade) will run Gaia v6.0.4
 
-The Comsos Hub mainnet network, `cosmoshub-4`, will run [Gaia v6.0.4](https://github.com/cosmos/gaia/releases/tag/v6.0.4). Operators _MUST_ use this version post-upgrade to remain connected to the network.
+The Comsos Hub mainnet network, `cosmoshub-4`, will run [Gaia v6.0.4](https://github.com/onomyprotocol/onomy/releases/tag/v6.0.4). Operators _MUST_ use this version post-upgrade to remain connected to the network.
 
 ## Vega upgrade steps
 
@@ -266,6 +266,6 @@ The riskiest thing a validator can do is discover that they made a mistake and r
 
 [cosmos/vega-test](https://github.com/cosmos/vega-test)
 
-[Delta upgrade instruction](https://github.com/cosmos/gaia/blob/main/docs/migration/cosmoshub-4-delta-upgrade.md)
+[Delta upgrade instruction](https://github.com/onomyprotocol/onomy/blob/main/docs/migration/cosmoshub-4-delta-upgrade.md)
 
 <!-- markdown-link-check-enable -->

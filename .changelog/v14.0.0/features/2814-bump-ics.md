@@ -1,1 +1,1 @@
-- Introducing the cryptographic verification of equivocation feature to the ICS provider module ([\#2814](https://github.com/cosmos/gaia/pull/2814))
+- Introducing the cryptographic verification of equivocation feature to the ICS provider module ([\#2814](https://github.com/onomyprotocol/onomy/pull/2814))

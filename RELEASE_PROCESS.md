@@ -91,7 +91,7 @@ Thus, when creating a new release branch (e.g., `release/v11.x`), the following 
     ```md
     ## Previous Versions
 
-    [CHANGELOG of previous versions](https://github.com/cosmos/gaia/blob/main/CHANGELOG.md)
+    [CHANGELOG of previous versions](https://github.com/onomyprotocol/onomy/blob/main/CHANGELOG.md)
     ```
 - push the release branch upstream 
     ```bash 

@@ -1,4 +1,4 @@
-module github.com/cosmos/gaia/v15
+module github.com/onomyprotocol/onomy/v15
 
 go 1.21
 

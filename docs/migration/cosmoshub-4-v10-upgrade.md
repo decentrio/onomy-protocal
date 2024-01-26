@@ -12,7 +12,7 @@ This document describes the steps for validators and full node operators, to upg
 - Upgrading IBC Go to [v4.4.0](https://github.com/cosmos/ibc-go/releases/tag/v4.4.0)
 - Upgrading Golang to [Golang 1.20.x](https://go.dev/blog/go1.20), making it mandatory to build Gaia with **Golang v1.20.x**
 
-❗The **preferred binary** for **Mainnet release** is [v10.0.1](https://github.com/cosmos/gaia/releases/tag/v10.0.1), as that version includes a fix for the [IBC Huckleberry fix](https://forum.cosmos.network/t/ibc-security-advisory-huckleberry/10731). v10.0.0 does **NOT** include this fix.
+❗The **preferred binary** for **Mainnet release** is [v10.0.1](https://github.com/onomyprotocol/onomy/releases/tag/v10.0.1), as that version includes a fix for the [IBC Huckleberry fix](https://forum.cosmos.network/t/ibc-security-advisory-huckleberry/10731). v10.0.0 does **NOT** include this fix.
 
 ## Instructions
   
@@ -81,11 +81,11 @@ For those validator and full node operators that are interested in ensuring prep
 
 ### Current runtime, cosmoshub-4 (pre-v10 upgrade) is running Gaia v9.1.1
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v9.1.1](https://github.com/cosmos/gaia/releases/v9.1.1). We anticipate that operators who are running on v9.1.1, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
+The Cosmos Hub mainnet network, `cosmoshub-4`, is currently running [Gaia v9.1.1](https://github.com/onomyprotocol/onomy/releases/v9.1.1). We anticipate that operators who are running on v9.1.1, will be able to upgrade successfully. Validators are expected to ensure that their systems are up to date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
 
 ### Target runtime, cosmoshub-4 (post-v10 upgrade) will run Gaia v10.0.1
 
-The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v10.0.1](https://github.com/cosmos/gaia/releases/tag/v10.0.1). Operators _MUST_ use this version post-upgrade to remain connected to the network.
+The Cosmos Hub mainnet network, `cosmoshub-4`, will run [Gaia v10.0.1](https://github.com/onomyprotocol/onomy/releases/tag/v10.0.1). Operators _MUST_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -100,7 +100,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ### Method I: Manual Upgrade
 
-Make sure Gaia v10.0.1 is installed by either downloading a [compatible binary](https://github.com/cosmos/gaia/releases/tag/v10.0.1), or building from source. Building from source requires **Golang 1.20**.
+Make sure Gaia v10.0.1 is installed by either downloading a [compatible binary](https://github.com/onomyprotocol/onomy/releases/tag/v10.0.1), or building from source. Building from source requires **Golang 1.20**.
 
 Run Gaia v9.1.1 till upgrade height, the node will panic:
 

@@ -58,7 +58,7 @@ Starting from gaiad `v11.0.0`, `BypassMinFeeMsgTypes` and `MaxTotalBypassMinFeeM
 
 From gaiad v11.0.0, nodes that have the `bypass-min-fee-msg-types` field in their `app.toml` configuration are **not utilized**. Therefore, node operators have the option to either leave the field in their configurations or remove it. Node inited by gaiad v11.0.0 or later does not have `bypass-min-fee-msg-types` field in the `app.toml`.
 
-Before gaiad `v11.0.0`, `bypass-min-fee-msg-types` can be set by each node in `app.toml`, and [the bypass messages gas usage on average should not exceed `maxBypassMinFeeMsgGasUsage`=200,000](https://github.com/cosmos/gaia/blob/682770f2410ab0d33ac7f0c7203519d7a99fa2b6/x/globalfee/ante/fee.go#L69).
+Before gaiad `v11.0.0`, `bypass-min-fee-msg-types` can be set by each node in `app.toml`, and [the bypass messages gas usage on average should not exceed `maxBypassMinFeeMsgGasUsage`=200,000](https://github.com/onomyprotocol/onomy/blob/682770f2410ab0d33ac7f0c7203519d7a99fa2b6/x/globalfee/ante/fee.go#L69).
 
 - Nodes created using Gaiad `v7.0.2` - `v10.0.x` use `["/ibc.core.channel.v1.MsgRecvPacket", "/ibc.core.channel.v1.MsgAcknowledgement","/ibc.applications.transfer.v1.MsgTransfer"]` as defaults. 
 - Nodes created using Gaiad `v11.0.x` or later use `["/ibc.core.channel.v1.MsgRecvPacket", "/ibc.core.channel.v1.MsgAcknowledgement","/ibc.applications.transfer.v1.MsgTransfer", "/ibc.core.channel.v1.MsgTimeout", "/ibc.core.channel.v1.MsgTimeoutOnClose"]` as defaults. 
@@ -83,7 +83,7 @@ bypass-min-fee-msg-types = ["/ibc.core.channel.v1.MsgRecvPacket", "/ibc.core.cha
 
 ## `Minimum-gas-prices` (local fee requirement)
 
-The `minimum-gas-prices` parameter enables node operators to set its minimum fee requirements, and it can be set in the `config/app.toml` file.  Please note: if `minimum-gas-prices` is set to include zero coins, the zero coins are sanitized when [`SetMinGasPrices`](https://github.com/cosmos/gaia/blob/76dea00bd6d11bfef043f6062f41e858225820ab/cmd/gaiad/cmd/root.go#L221).
+The `minimum-gas-prices` parameter enables node operators to set its minimum fee requirements, and it can be set in the `config/app.toml` file.  Please note: if `minimum-gas-prices` is set to include zero coins, the zero coins are sanitized when [`SetMinGasPrices`](https://github.com/onomyprotocol/onomy/blob/76dea00bd6d11bfef043f6062f41e858225820ab/cmd/gaiad/cmd/root.go#L221).
 When setting `minimum-gas-prices`, it's important to keep the following rules in mind:
 
 - The denoms in `min-gas-prices` that are not present in the global fees list are ignored. 
