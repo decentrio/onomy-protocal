@@ -81,7 +81,7 @@ func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKe
 
 	for _, ubd := range ubdQueue {
 		for _, entry := range ubd.Entries {
-			err := bk.UndelegateCoinsFromModuleToAccount(ctx, stakingtypes.NotBondedPoolName, sdk.AccAddress(delAddr), sdk.NewCoins(sdk.NewCoin(bondDenom, entry.Balance)))
+			err := bk.UndelegateCoinsFromModuleToAccount(ctx, stakingtypes.NotBondedPoolName, sdk.MustAccAddressFromBech32(delAddr), sdk.NewCoins(sdk.NewCoin(bondDenom, entry.Balance)))
 			if err != nil {
 				return err
 			}
