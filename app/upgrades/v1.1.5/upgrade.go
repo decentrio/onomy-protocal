@@ -43,17 +43,26 @@ func CreateUpgradeHandler(
 			}
 
 			// unbond all delegations from account
-			forceUnbondTokens(ctx, addr, bk, sk)
+			err := forceUnbondTokens(ctx, addr, bk, sk)
+			if err != nil {
+				ctx.Logger().Error("Error force unbonding delegations")
+				return nil, err
+			}
 
 			// finish all current unbonding entries
-			forceFinishUnbonding(ctx, addr, bk, sk)
+			err = forceFinishUnbonding(ctx, addr, bk, sk)
+			if err != nil {
+				ctx.Logger().Error("Error force finishing unbonding delegations")
+				return nil, err
+			}
 
 			// send to dao module account
 			// vesting account should be able to send coins normaly after
 			// we converted it back to a base account
 			bal := bk.GetAllBalances(ctx, sdk.AccAddress(addr))
-			err := bk.SendCoinsFromAccountToModule(ctx, sdk.AccAddress(addr), daotypes.ModuleName, bal)
+			err = bk.SendCoinsFromAccountToModule(ctx, sdk.AccAddress(addr), daotypes.ModuleName, bal)
 			if err != nil {
+				ctx.Logger().Error("Error reallocating funds")
 				return nil, err
 			}
 		}
