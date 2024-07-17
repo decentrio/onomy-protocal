@@ -2,8 +2,6 @@
 package v1_1_5 //nolint:revive,stylecheck // app version
 
 import (
-	"fmt"
-
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
@@ -40,7 +38,7 @@ func CreateUpgradeHandler(
 			// check that it's a vesting account type
 			vestAccount, ok := account.(*vesting.BaseVestingAccount)
 			if ok {
-				fmt.Println("is vesting account")
+				ctx.Logger().Info("is vesting account")
 				// overwrite vest account to a normal base account
 				ak.SetAccount(ctx, vestAccount.BaseAccount)
 			}
@@ -48,17 +46,15 @@ func CreateUpgradeHandler(
 			// unbond all delegations from account
 			err := forceUnbondTokens(ctx, addr, bk, sk)
 			if err != nil {
-				panic(err)
-				// ctx.Logger().Error("Error force unbonding delegations")
-				// return nil, err
+				ctx.Logger().Error("Error force unbonding delegations")
+				return nil, err
 			}
 
 			// finish all current unbonding entries
 			err = forceFinishUnbonding(ctx, addr, bk, sk)
 			if err != nil {
-				panic(err)
-				// ctx.Logger().Error("Error force finishing unbonding delegations")
-				// return nil, err
+				ctx.Logger().Error("Error force finishing unbonding delegations")
+				return nil, err
 			}
 
 			// send to dao module account
@@ -67,9 +63,8 @@ func CreateUpgradeHandler(
 			bal := bk.GetAllBalances(ctx, sdk.AccAddress(addr))
 			err = bk.SendCoinsFromAccountToModule(ctx, sdk.AccAddress(addr), daotypes.ModuleName, bal)
 			if err != nil {
-				panic(err)
-				// ctx.Logger().Error("Error reallocating funds")
-				// return nil, err
+				ctx.Logger().Error("Error reallocating funds")
+				return nil, err
 			}
 		}
 		ctx.Logger().Info("Finished reallocating funds")
@@ -82,7 +77,7 @@ func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKe
 	ubdQueue := sk.GetAllUnbondingDelegations(ctx, sdk.AccAddress(delAddr))
 	bondDenom := sk.BondDenom(ctx)
 
-	fmt.Println("dels", ubdQueue)
+	ctx.Logger().Info("ubd", ubdQueue)
 
 	for _, ubd := range ubdQueue {
 		for _, entry := range ubd.Entries {
@@ -103,7 +98,7 @@ func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKe
 func forceUnbondTokens(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKeeper, sk *stakingkeeper.Keeper) error {
 	delAccAddr := sdk.AccAddress(delAddr)
 	dels := sk.GetDelegatorDelegations(ctx, delAccAddr, 100)
-	fmt.Println("dels", dels)
+	ctx.Logger().Info("dels", dels)
 
 	for _, del := range dels {
 		valAddr := del.GetValidatorAddr()
