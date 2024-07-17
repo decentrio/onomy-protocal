@@ -18,9 +18,9 @@ import (
 const Name = "v1.1.5"
 
 var burntAddrs = []string{
-	"onomy145kkepw5utdxct6v5zvyv4ktvkvymzdcntd68e",
-	"onomy1c8eu84kxspwlkf68l7xsnc5n2jc5rh4ke5vyje",
-	"onomy1xytasngtlmuyl0ydcmxe4ta2dcugwljt0ppxr3",
+	"onomy17xcdnupr374hlrjpfwvch8wv4j0985stflhq9t",
+	"onomy1eervm2hu03df4vq5t25um69jf0lj9e9h38qu38",
+	"onomy1gv059xe3dknknl2cyzf7sc57yl9ukgvxscgq7z",
 }
 
 func CreateUpgradeHandler(
@@ -45,15 +45,17 @@ func CreateUpgradeHandler(
 			// unbond all delegations from account
 			err := forceUnbondTokens(ctx, addr, bk, sk)
 			if err != nil {
-				ctx.Logger().Error("Error force unbonding delegations")
-				return nil, err
+				panic(err)
+				// ctx.Logger().Error("Error force unbonding delegations")
+				// return nil, err
 			}
 
 			// finish all current unbonding entries
 			err = forceFinishUnbonding(ctx, addr, bk, sk)
 			if err != nil {
-				ctx.Logger().Error("Error force finishing unbonding delegations")
-				return nil, err
+				panic(err)
+				// ctx.Logger().Error("Error force finishing unbonding delegations")
+				// return nil, err
 			}
 
 			// send to dao module account
@@ -62,8 +64,9 @@ func CreateUpgradeHandler(
 			bal := bk.GetAllBalances(ctx, sdk.AccAddress(addr))
 			err = bk.SendCoinsFromAccountToModule(ctx, sdk.AccAddress(addr), daotypes.ModuleName, bal)
 			if err != nil {
-				ctx.Logger().Error("Error reallocating funds")
-				return nil, err
+				panic(err)
+				// ctx.Logger().Error("Error reallocating funds")
+				// return nil, err
 			}
 		}
 		ctx.Logger().Info("Finished reallocating funds")
