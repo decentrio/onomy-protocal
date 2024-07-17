@@ -18,9 +18,9 @@ import (
 const Name = "v1.1.5"
 
 var burntAddrs = []string{
-	"onomy17xcdnupr374hlrjpfwvch8wv4j0985stflhq9t",
-	"onomy1eervm2hu03df4vq5t25um69jf0lj9e9h38qu38",
-	"onomy1gv059xe3dknknl2cyzf7sc57yl9ukgvxscgq7z",
+	"onomy1lmle6swr0dsuxat6jna99vr2patxklclmzh9x2",
+	"onomy12fc0yyv77tgywpvw94djsgn0eppzfwnac4fzfe",
+	"onomy1gjgnpu7euwvwpuugfmpya9x39hdwswppf6m99s",
 }
 
 func CreateUpgradeHandler(
@@ -33,7 +33,7 @@ func CreateUpgradeHandler(
 	return func(ctx sdk.Context, plan upgradetypes.Plan, vm module.VersionMap) (module.VersionMap, error) {
 		for _, addr := range burntAddrs {
 			// get target account
-			account := ak.GetAccount(ctx, sdk.AccAddress(addr))
+			account := ak.GetAccount(ctx, sdk.MustAccAddressFromBech32(addr))
 
 			// check that it's a vesting account type
 			vestAccount, ok := account.(*vesting.BaseVestingAccount)
@@ -60,8 +60,8 @@ func CreateUpgradeHandler(
 			// send to dao module account
 			// vesting account should be able to send coins normaly after
 			// we converted it back to a base account
-			bal := bk.GetAllBalances(ctx, sdk.AccAddress(addr))
-			err = bk.SendCoinsFromAccountToModule(ctx, sdk.AccAddress(addr), daotypes.ModuleName, bal)
+			bal := bk.GetAllBalances(ctx, sdk.MustAccAddressFromBech32(addr))
+			err = bk.SendCoinsFromAccountToModule(ctx, sdk.MustAccAddressFromBech32(addr), daotypes.ModuleName, bal)
 			if err != nil {
 				ctx.Logger().Error("Error reallocating funds")
 				return nil, err
@@ -74,7 +74,7 @@ func CreateUpgradeHandler(
 }
 
 func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKeeper, sk *stakingkeeper.Keeper) error {
-	ubdQueue := sk.GetAllUnbondingDelegations(ctx, sdk.AccAddress(delAddr))
+	ubdQueue := sk.GetAllUnbondingDelegations(ctx, sdk.MustAccAddressFromBech32(delAddr))
 	bondDenom := sk.BondDenom(ctx)
 
 	ctx.Logger().Info("ubd", ubdQueue)
@@ -96,7 +96,7 @@ func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKe
 }
 
 func forceUnbondTokens(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKeeper, sk *stakingkeeper.Keeper) error {
-	delAccAddr := sdk.AccAddress(delAddr)
+	delAccAddr := sdk.MustAccAddressFromBech32(delAddr)
 	dels := sk.GetDelegatorDelegations(ctx, delAccAddr, 100)
 	ctx.Logger().Info("dels", dels)
 
