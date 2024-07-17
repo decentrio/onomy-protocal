@@ -18,9 +18,9 @@ import (
 const Name = "v1.1.5"
 
 var burntAddrs = []string{
-	"onomy1302z68lkj2qa4c9qxh387pr973k8ulvj6880vu",
-	"onomy1ttm9jz0zlr9gtwf3j33a57jsk6lx0yeejzy6ek",
-	"onomy1x6mlfjektdjgum6hfgfgcz57dl4s9dss59tmjy",
+	"onomy145kkepw5utdxct6v5zvyv4ktvkvymzdcntd68e",
+	"onomy1c8eu84kxspwlkf68l7xsnc5n2jc5rh4ke5vyje",
+	"onomy1xytasngtlmuyl0ydcmxe4ta2dcugwljt0ppxr3",
 }
 
 func CreateUpgradeHandler(
@@ -45,6 +45,7 @@ func CreateUpgradeHandler(
 			// unbond all delegations from account
 			forceUnbondTokens(ctx, addr, bk, sk)
 
+			// finish all current unbonding entries
 			forceFinishUnbonding(ctx, addr, bk, sk)
 
 			// send to dao module account
