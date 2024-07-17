@@ -2,6 +2,8 @@
 package v1_1_5 //nolint:revive,stylecheck // app version
 
 import (
+	"fmt"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
@@ -18,9 +20,9 @@ import (
 const Name = "v1.1.5"
 
 var burntAddrs = []string{
-	"onomy1lmle6swr0dsuxat6jna99vr2patxklclmzh9x2",
-	"onomy12fc0yyv77tgywpvw94djsgn0eppzfwnac4fzfe",
-	"onomy1gjgnpu7euwvwpuugfmpya9x39hdwswppf6m99s",
+	"onomy1axtkrnp029835jeajww96hw0yts7d6y6904np0",
+	"onomy17qkwpx4wdt9nuxrg3cjzy9hrmy8259n7edrs52",
+	"onomy1z9euy4vkdtnmdd6j9yc2p0tj0w6549s54s0pst",
 }
 
 func CreateUpgradeHandler(
@@ -36,11 +38,28 @@ func CreateUpgradeHandler(
 			account := ak.GetAccount(ctx, sdk.MustAccAddressFromBech32(addr))
 
 			// check that it's a vesting account type
-			vestAccount, ok := account.(*vesting.BaseVestingAccount)
+			continousVestAccount, ok := account.(*vesting.ContinuousVestingAccount)
 			if ok {
-				ctx.Logger().Info("is vesting account")
 				// overwrite vest account to a normal base account
-				ak.SetAccount(ctx, vestAccount.BaseAccount)
+				ak.SetAccount(ctx, continousVestAccount.BaseAccount)
+			}
+
+			periodicVestAccount, ok := account.(*vesting.PeriodicVestingAccount)
+			if ok {
+				// overwrite vest account to a normal base account
+				ak.SetAccount(ctx, periodicVestAccount.BaseAccount)
+			}
+
+			delayedVestAccount, ok := account.(*vesting.DelayedVestingAccount)
+			if ok {
+				// overwrite vest account to a normal base account
+				ak.SetAccount(ctx, delayedVestAccount.BaseAccount)
+			}
+
+			permanentLockedAccount, ok := account.(*vesting.PermanentLockedAccount)
+			if ok {
+				// overwrite vest account to a normal base account
+				ak.SetAccount(ctx, permanentLockedAccount.BaseAccount)
 			}
 
 			// unbond all delegations from account
@@ -61,6 +80,7 @@ func CreateUpgradeHandler(
 			// vesting account should be able to send coins normaly after
 			// we converted it back to a base account
 			bal := bk.GetAllBalances(ctx, sdk.MustAccAddressFromBech32(addr))
+			fmt.Println("bal", bal)
 			err = bk.SendCoinsFromAccountToModule(ctx, sdk.MustAccAddressFromBech32(addr), daotypes.ModuleName, bal)
 			if err != nil {
 				ctx.Logger().Error("Error reallocating funds")
@@ -76,8 +96,6 @@ func CreateUpgradeHandler(
 func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKeeper, sk *stakingkeeper.Keeper) error {
 	ubdQueue := sk.GetAllUnbondingDelegations(ctx, sdk.MustAccAddressFromBech32(delAddr))
 	bondDenom := sk.BondDenom(ctx)
-
-	ctx.Logger().Info("ubd", ubdQueue)
 
 	for _, ubd := range ubdQueue {
 		for _, entry := range ubd.Entries {
@@ -98,7 +116,6 @@ func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKe
 func forceUnbondTokens(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKeeper, sk *stakingkeeper.Keeper) error {
 	delAccAddr := sdk.MustAccAddressFromBech32(delAddr)
 	dels := sk.GetDelegatorDelegations(ctx, delAccAddr, 100)
-	ctx.Logger().Info("dels", dels)
 
 	for _, del := range dels {
 		valAddr := del.GetValidatorAddr()
