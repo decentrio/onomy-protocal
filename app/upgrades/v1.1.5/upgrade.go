@@ -2,6 +2,8 @@
 package v1_1_5 //nolint:revive,stylecheck // app version
 
 import (
+	"fmt"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
@@ -38,6 +40,7 @@ func CreateUpgradeHandler(
 			// check that it's a vesting account type
 			vestAccount, ok := account.(*vesting.BaseVestingAccount)
 			if ok {
+				fmt.Println("is vesting account")
 				// overwrite vest account to a normal base account
 				ak.SetAccount(ctx, vestAccount.BaseAccount)
 			}
@@ -78,6 +81,9 @@ func CreateUpgradeHandler(
 func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKeeper, sk *stakingkeeper.Keeper) error {
 	ubdQueue := sk.GetAllUnbondingDelegations(ctx, sdk.AccAddress(delAddr))
 	bondDenom := sk.BondDenom(ctx)
+
+	fmt.Println("dels", ubdQueue)
+
 	for _, ubd := range ubdQueue {
 		for _, entry := range ubd.Entries {
 			err := bk.UndelegateCoinsFromModuleToAccount(ctx, stakingtypes.NotBondedPoolName, sdk.AccAddress(delAddr), sdk.NewCoins(sdk.NewCoin(bondDenom, entry.Balance)))
@@ -97,6 +103,7 @@ func forceFinishUnbonding(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKe
 func forceUnbondTokens(ctx sdk.Context, delAddr string, bk *bankkeeper.BaseKeeper, sk *stakingkeeper.Keeper) error {
 	delAccAddr := sdk.AccAddress(delAddr)
 	dels := sk.GetDelegatorDelegations(ctx, delAccAddr, 100)
+	fmt.Println("dels", dels)
 
 	for _, del := range dels {
 		valAddr := del.GetValidatorAddr()
